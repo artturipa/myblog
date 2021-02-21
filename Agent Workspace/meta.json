@@ -1,7 +1,9 @@
 {
-    "publishDate": "2021-02-08",
-    "published":"no",
-    "categories": "Other",
-    "initialTimeRequired":"01:20:00",
-    "proofingTimeRequired":"00:00:00"
+    "publishDate": "2021-01-15",
+    "published":"yes",
+    "title": "Is it right time to implement Agent Workspace",
+    "categories": "Development",
+    "initialTimeRequired":"00:50:00",
+    "proofingTimeRequired":"00:10:00",
+    "description": "Reflecting on my experienced so far."
 }
