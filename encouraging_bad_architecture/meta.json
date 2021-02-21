@@ -1,7 +1,9 @@
 {
-    "publishDate": "2021-02-08",
-    "published":"no",
-    "categories": "Other",
-    "initialTimeRequired":"01:20:00",
-    "proofingTimeRequired":"00:00:00"
+    "publishDate": "2021-02-21",
+    "published":"yes",
+    "title":"How ServiceNow licensing encourages bad architecture",
+    "categories": "Architecture",
+    "initialTimeRequired":"00:50:00",
+    "proofingTimeRequired":"00:00:00",
+    "description": "Thinking about current licensing could be improved."
 }
