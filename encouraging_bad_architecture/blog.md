@@ -1,6 +1,6 @@
 # How current ServiceNow licensing encourages bad architecture
 
-## What I don't like about App Engine licensing
+## What I don't like about custom table licensing
 There is something I don't like about Servicenow's current licensing policy. During the Madrid release Servicenow made a major update to its licensing model and started counting amount of custom tables. Earlier it was possible to build any number of custom applications with any number of custom tables. 
 
 It's understandable that Servicenow sought a change to a situation, where customers were able to gain extraordinary value with only a minor increase in license costs. If a customer starts to manage ten additional workflows with the platform, it is only reasonable that Servicenow wants some compensation about the increased usage.
