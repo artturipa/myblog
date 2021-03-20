@@ -24,4 +24,4 @@ Building tests simultaneously with development has many benefits, for example:
 
 ## Time to learn
 
-Before I start to preach about my vision to my peers, I want to learn it myself. Hence I will try to write here my experiences following the discipline.
+Before I start to preach about my vision to my peers, I want to learn the discipline myself. Hence I will try to write here my experiences following the discipline.
