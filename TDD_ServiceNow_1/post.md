@@ -1,5 +1,5 @@
 # TDD Series, introduction
-![alt text](ErikMclean_wall_e.JPG "Logo Title Text 1")
+<!-- ![alt text](ErikMclean_wall_e.JPG "Logo Title Text 1") -->
 
 ## Striving towards TDD
 
