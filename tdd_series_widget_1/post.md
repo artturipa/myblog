@@ -32,6 +32,6 @@ So now I should be able test the UI by identifying specific element with the hel
 
 Or not... I was not able to get the "Open Portal Page" test step to function due to unkown error. It seems to pass 20% of the time, and the problem persists with different portal pages. However, with standard portal the test step works.
 
-So before I can continue I need to debug and fix something wrong in the portal, well it's all good karma =). 
+So before I can continue I need do debugging and fix the issue in the portal, well it's all good karma =). 
 
 Can't care to do that at this time. Time to play Noita and continue next time.
