@@ -15,9 +15,11 @@ However, I believe that ServiceNow developers can learn a lot from TDD. Even tho
 
 ## Motivation
 
-Automated testing allows ServiceNow to stay flexible while building custom application and configurations. I have seen many organizations adopt ATF with varying level of success. Usually ATF tests are built after the initial development has been completed. I'm not a fan of such approach.
+Automated testing allows ServiceNow to stay flexible while building custom application and configurations. Without automated testing risks grow and manual testing starts to considerable (=huge) amount of time. I have seen many organizations adopt ATF with varying level of success. Usually ATF tests are built after the initial development has been completed. I'm not a fan of such approach.
 
 Building tests simultaneously with development has many benefits, for example:
+* Tests are actually done
+* Configurations will be testable
 * Efficiency in building the tests
 * Higher test coverage
 * Tests are less prone to fragile test problem
