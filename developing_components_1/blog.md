@@ -2,36 +2,36 @@
 
 ![pic](https://source.unsplash.com/f77Bh3inUpE/800x500)
 
-Until this point,, I have had only limited experiences about developing custom components. As I have started to receive more specific UX -needs from customers, I should definitely step up my skills with this technology.
+Until this point, I have had only limited experiences on developing custom components with new Now Experience UI. However, lately I have started to receive more specific UX -demands from customers, and hence it is time to step up my skillset.
 
-Here I will document my learning process and various challenges I will surely encounter.
+Here I will try to document my learning process and various challenges, I will surely encounter.
 
 ## First challenge, a resource view -component
 
-I decided to start the learning process by building an initial version of a component requested by a customer. The component should display a gantt -like chart about resource availability over time (Before you ask, Schedule pages will not do).
+I decided to start the learning process by building an initial version of a resource view -component, which was requested by a customer. The component should display a gantt -like chart about resource availability over time (Before you ask, Schedule pages will not do).
 
 ### Step 1, component scaffolding and initial development
 
 After one hour of trying, I was able to succeed with the scaffolding. I had to do the component setup with **--offline** parameter, because CLI provided by ServiceNow could not validate version of the instance. Apparently that is a common thing.
 
-As a side comment, it is somewhat confusing that the initial version of the component renders a blank page without a boilerplate. ServiceNow could help developers by providing some initial structure, and I am sure they will do it at some point.
+It is somewhat confusing that the initial version of the component renders a blank page without a boilerplate. ServiceNow could help developers by providing some initial structure, and I am sure they will do it at some point.
 
 ### Step 2, trying to deploy a Hello World -component to the instance
 
 Developing the component succeeded. Deploying it was as painful as I remembered from previous experiences.
 
-After following steps I succeeded in the first development:
+After following steps I succeeded with the deployment:
 
 1. Reverting the version of dev-instance back to Quebec from Rome's early availability
 2. Reinstalling Node (twice)
 3. Reinstalling Python
 4. Using older (Quebec) version of now-cli instead of newer snc
 
-Perhaps the crucial thing was using the earlier **now-cli** instead of newer **snc**. Besides fixing the deployment issue, it seemed to correct the error about instance version validation.
+Perhaps the crucial thing was using the earlier **now-cli** instead of the newer **snc**. It did not only fix the deployment issue, but it also seemed to correct the error about instance version validation.
 
 I learned that after the scaffolding and installation (**npm install**), an initialization was required (*npm init*). Otherwise, the component would not develop.
 
-To my delight, I noticed that the component deployed to the instance can be updated directly from the CLI. However, further deployments are not possible without using the **--force** parameter.
+To my delight, I noticed that deployed components that are used in workspaces can be updated directly from the CLI. However, further deployments are not possible without using the **--force** parameter.
 
 ### Step 3, trying to build something more useful besides Hello World
 
@@ -39,7 +39,7 @@ At last! I can start to go through the documentation and build stuff, which is t
 
 ### The lessons
 
-During the first session, I managed do an API call and render the results in the component. There were few key things, I hope to remember afterwards. 
+During the first session, I managed do an API call and render the results in the component. There were few key things I hope to remember afterwards. 
 
 First, importing **createHttpEffect** and **actionTypes** are necessary for most basic interactions. Importing should be done in **index.js** in a following manner:
 
