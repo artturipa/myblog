@@ -4,6 +4,8 @@ I recently participated to SABSA foundation training. I was pleased by the ideas
 
 Below are the notes I did when I trained for the certification exam. The notes give you an overview of the ideas included in the course. The training itself was five full days, and I recommend participating to it in case the topics resonate with you.
 
+[This speech](https://www.youtube.com/watch?v=BwTIpa7oSDY) Gives a good example about benefits of SABSA -approach.
+
 # NOTES
 
 ## Concept of Enterprise
