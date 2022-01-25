@@ -2,7 +2,7 @@
 
 Below are steps that should be done in order to get the Component environment running on M1 Mac. I will update this later on in case these instructions prove to be insufficient.
 
-## Setup
+## Setup (legacy CLI)
 
     npm install @servicenow/cli@quebec -g
 
@@ -15,6 +15,36 @@ Creates a project and a scope into the instance.
     npm install
 
 Installs initial dependencies.
+
+## Setup (new CLI)
+
+### Mac CLI installation
+
+When I initially installed it, ServiceNow had not registered the application and the installer couldn't be opened.
+
+It can be bypassed by running following command in installer's directory:
+
+    $ xattr -d com.apple.quarantine NOW_INSTALLER_FILENAME
+
+After installing the CLI, add UI Component extension:
+
+    $ snc extension add --name ui-component
+
+Connect to instance
+
+    snc configure profile set
+
+Create a project
+
+    snc ui-component project --name @org/scope-name
+
+Install dependencies
+
+    npm install
+
+Develop
+
+    snc ui-component develop
 
 ## M1 Mac environment setup
 
