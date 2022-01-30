@@ -1,4 +1,4 @@
-# Framework to facilitate effective security practices
+# Framework to enable effective security practices
 
 I recently participated to SABSA foundation training. I was pleased by the ideas and concepts the training gave me. 
 

@@ -42,6 +42,11 @@ Install dependencies
 
     npm install
 
+Add dependencies
+
+    npm install @servicenow/DEPENDENCY 
+    npm install @servicenow/ui-effect-http
+
 Develop
 
     snc ui-component develop

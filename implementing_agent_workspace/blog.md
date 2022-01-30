@@ -1,3 +1,8 @@
+## Update 30.1.2022
+This post is heavily outdated. ServiceNow have already abandoned the 'Agent Workspace' that I discuss here. ServiceNow was quick to renew it's workspace architecture. The current workspaces are known as "Configurable workspaces" or "UI Builder Workspaces".
+
+And going back to the title of this blog post, long story short, I heavily recommend using those. I would not, in any circumstance, do an implementation on top of traditional Jelly UI.
+
 # Is it right time to implement Agent Workspace
 
 Agent workspace for custom applications is something I have seen being requested by a growing number of customers. 
