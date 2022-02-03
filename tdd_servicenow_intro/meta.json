@@ -5,5 +5,6 @@
     "categories": "Development",
     "initialTimeRequired":"00:35:00", 
     "proofingTimeRequired":"00:10:00",
-    "description": "Introduction to TDD series"
+    "description": "Introduction to TDD series",
+    "coverPic": "https://source.unsplash.com/81rOS-jYoJ8/800x500"
 }
