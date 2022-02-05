@@ -1,0 +1,11 @@
+{
+    "publishDate": "2022-01-31",
+    "published":"yes",
+    "title":"Monthly Tips",
+    "categories": "Development",
+    "initialTimeRequired":"00:02:00", 
+    "proofingTimeRequired":"00:00:00",
+    "description": "Stuff that does not deserve space elsewhere",
+    "coverPic": "https://source.unsplash.com/UBK-l6IXJ2Y",
+    "hideCoverPicOnPost":true
+}
