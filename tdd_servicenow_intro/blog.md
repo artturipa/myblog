@@ -1,5 +1,4 @@
 # TDD Series, introduction
-![pic](https://source.unsplash.com/81rOS-jYoJ8/800x500)
 
 ## Striving towards TDD
 
