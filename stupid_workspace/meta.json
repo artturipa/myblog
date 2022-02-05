@@ -1,9 +1,10 @@
 {
     "publishDate": "2022-01-15",
-    "published":"no",
+    "published":"yes",
     "title":"Stupid Workspace Configurations",
     "categories": "Development",
-    "initialTimeRequired":"00:3:00", 
-    "proofingTimeRequired":"00:00:00",
-    "description": "Reference on how to manage in configuring the workspace"
+    "initialTimeRequired":"00:03:00", 
+    "proofingTimeRequired":"00:03:00",
+    "description": "Tip(s) to save your nerves with workspace configuration",
+    "coverPic":"https://source.unsplash.com/53bht9urH1A"
 }

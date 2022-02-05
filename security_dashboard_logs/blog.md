@@ -8,13 +8,13 @@ ISC shows plenty of useful information and links, from recent events to security
 
 ISC shows Performance Analytics graphs about the volume of security events. The volumes displayed by chart are retained for a long time, but in case you need to do any investigation about a specific log entry, the actual logging record is needed.
 
-As a default log records are cleared each week, so if you need to check historical data going futher back it's not possible.
+As a default log records are cleared each week. So if you need to check historical data going futher back, it's not possible without minor tweaking.
 
-Luckily there exists a simple fix for the issue. The clearing logic is defined in Scheduled Job **AppSec - Clear Weekly Events**, there you can control how many days log entries are retained.
+Luckily there exists a simple fix for the issue. The clearing logic is defined in Scheduled Job **AppSec - Clear Weekly Events**. Through this job you can control how many days log entries are retained.
 
-Taking into account that the amount of records on the table should be relatively small, there shouldn't come any performance issues to worry about when increasing the retention time. You wan't to extend log retention for the table **appsec_security_dashboard_event_logs**.
+Taking into account that the amount of records on the table is relatively small, there shouldn't come any performance issues to worry about when increasing the retention time. 
 
-Below a paste from Job contents, which shows how you can extend the log retention to 6 months.
+Below a paste from Job contents, which shows how you can extend the log retention to 6 months. You wan't to extend log retention for the table **appsec_security_dashboard_event_logs**.
 
     // Constants
     var constants = new ISCConstants();
