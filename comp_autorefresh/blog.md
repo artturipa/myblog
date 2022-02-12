@@ -1,8 +1,8 @@
-# Has the custom component development gone too far?
+# Has the component development gone too far?
 
 No it has not. I love it. It's a good excuse for me to step up my javascript skills and continue towards mastery.
 
-This was a requirement that was suprisingly hard to resolve, and that's why I feel the need to share the solution here.
+This requirement was suprisingly hard to resolve, and that's why I feel the need to share the solution here.
 
 ## But ain't this provided by ServiceNow if you just do it right
 
@@ -19,19 +19,15 @@ Note that the timeout needs to be defined as a property to state, because state 
 So, do it like this:
 
 
-function timeOutFunction(disptachFunction, dispatchParm1, dispatchParm2) {
-    // dispatchParm1 is the name of the actionhandler to call
-    // dispatchParm2 are the parameters to pass into actionhandler-function
-	disptachFunction(dispatchParm1,dispatchParm2)
-}
+    function timeOutFunction(disptachFunction, dispatchParm1, dispatchParm2) {
+        // dispatchParm1 is the name of the actionhandler to call
+        // dispatchParm2 are the parameters to pass into actionhandler-function
+        disptachFunction(dispatchParm1,dispatchParm2)
+    }
 
-
-actionHandlers: {
-    .
-    .
-    .
-
-DATA_RECEIVED: ({ state, properties, action, updateState, dispatch }) => {
+    actionHandlers: {
+        ...
+        DATA_RECEIVED: ({ state, properties, action, updateState, dispatch }) => {
             /* Below row is needed, because if refresh happens due to user interaction, refresh should be cancelled */
             clearTimeout(state.timeOut) 
             
@@ -42,12 +38,9 @@ DATA_RECEIVED: ({ state, properties, action, updateState, dispatch }) => {
 					setTimeout(timeOutFunction, properties.timeOutDelay, dispatch,'REFRESH_DATA_ACTION_HANDLER',{
 						parameter_of_interest: properties.current_value_of_parameter
 					})
-
 			})
-
 		},
-    
-    .
-    .
-    .
-}
+        ...
+    }
+
+    Till next time!
