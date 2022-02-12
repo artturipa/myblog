@@ -1,9 +1,10 @@
 {
-    "publishDate": "2022-01-15",
-    "published":"no",
-    "title":"Keeping Projects in time",
+    "publishDate": "2022-02-06",
+    "published":"yes",
+    "title":"Keeping the Projects on Time",
     "categories": "Management",
-    "initialTimeRequired":"01:15:00", 
+    "initialTimeRequired":"0:40:00", 
     "proofingTimeRequired":"00:00:00",
-    "description": "My own notes for SABSA certification exam"
+    "description": "Some thoughts on how to keep the schedule",
+    "coverPic":"https://source.unsplash.com/X_fbh4Utwk4"
 }
