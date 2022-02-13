@@ -4,7 +4,7 @@ No it has not. I love it. It's a good excuse for me to step up my javascript ski
 
 This requirement was suprisingly hard to resolve, and that's why I feel the need to share the solution here.
 
-## But ain't this provided by ServiceNow if you just do it right
+## But ain't this provided by ServiceNow if you just do it right?
 
 Nope. Data resources do not cause the component contents to update even if the source data changes.
 
