@@ -51,6 +51,14 @@ Develop
 
     snc ui-component develop
 
+Add profiles for different instances
+
+    snc configure profile set --profile PROFILE_NAME
+
+Deploy component to specified instance:
+
+    snc ui-component deploy --profile PROFILE_NAME
+
 ## M1 Mac environment setup
 
 ### Setup Rosetta-Terminal
