@@ -8,7 +8,7 @@ This requirement was suprisingly hard to resolve, and that's why I feel the need
 
 Nope. Data resources do not cause the component contents to update even if the source data changes.
 
-At first I thought the problem was in my configuration choices; I was calling Scripted Rest API directly from the component. The usual way to pass data into component is to use data transformation methods in the UI Builder (data resources etc). However, in this case the data fetching and analysis required some heavy lifting, and I chose to abstract that away from UI structure. 
+At first I thought the problem was in my configuration choices; I was calling Scripted Rest API directly from the component. The usual way to pass data into component is to use data transformation methods in the UI Builder (data resources etc). However, in this case the data fetching and analysis required some heavy lifting, and I chose to abstract that away from UI specifications. 
 
 ## The solution
 
