@@ -2,7 +2,7 @@
 
 No it has not. I love it. It's a good excuse for me to step up my javascript skills and continue towards mastery.
 
-This requirement was suprisingly hard to resolve, and that's why I feel the need to share the solution here.
+This requirement was surprisingly hard to resolve, and that's why I feel the need to share the solution here.
 
 ## But ain't this provided by ServiceNow if you just do it right?
 

@@ -51,14 +51,6 @@ Develop
 
     snc ui-component develop
 
-Add profiles for different instances
-
-    snc configure profile set --profile PROFILE_NAME
-
-Deploy component to specified instance:
-
-    snc ui-component deploy --profile PROFILE_NAME
-
 ## M1 Mac environment setup
 
 ### Setup Rosetta-Terminal
@@ -79,3 +71,38 @@ Install Node
 
     nvm install 12
 
+## Deploy for multiple instances and companies
+
+Add profiles for different instances
+
+    snc configure profile set --profile PROFILE_NAME
+
+Deploy component to specified instance:
+
+    snc ui-component deploy --profile PROFILE_NAME
+
+If the instance has different company prefix, component name should reflect that. Usually company specific prefix is five letters long symbol. So if you wan't to deploy the component to a company which has prefix of "xyzab", do following changes:
+
+**In index.js:**
+
+Look up for
+
+    createCustomElement('xxxxx-component-name', {...
+
+And change it to
+
+    createCustomElement('xyzab-component-name', {...
+
+**In now-ui.json:**
+
+In the beginning of file there is section:
+
+    {
+        "components": {
+        "xxxxx-component-name": { ...
+
+Change it to:
+
+    {
+        "components": {
+        "xyzab-component-name": { ...
