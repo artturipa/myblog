@@ -1,4 +1,4 @@
-# Keeping the project in schedule
+# My Three Cents on Project Management
 
 ## On setting milestones and the usual fallacy
 
