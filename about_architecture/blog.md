@@ -1,7 +1,5 @@
 # Architectural reflections
 
-![pic](https://source.unsplash.com/gySMaocSdqs/800x500)
-
 ## Enterprise architecture
 
 It does not get any simpler than this: In case enterprise is not aware about its operations and goals, it will not effectively. This is the problem enterprise architecture (EA) aims to solve. 

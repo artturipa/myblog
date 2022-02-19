@@ -1,9 +1,10 @@
 {
-    "publishDate": "",
-    "published":"no",
-    "title":"",
-    "categories": "",
+    "publishDate": "2022-02-19",
+    "published":"yes",
+    "title":"Faster development with TDD",
+    "categories": "Development, TDD",
     "initialTimeRequired":"00:15:00",
-    "proofingTimeRequired":"00:00:00",
-    "description": ""
+    "proofingTimeRequired":"00:50:00",
+    "description": "technical nonsense for geeks",
+    "coverPic":"https://source.unsplash.com/jgv0-gbw0vo"
 }

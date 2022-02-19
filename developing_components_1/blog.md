@@ -1,7 +1,5 @@
 # Now Experience UI Components
 
-![pic](https://source.unsplash.com/f77Bh3inUpE/800x500)
-
 Until this point, I have had only limited experiences on developing custom components with new Now Experience UI. However, lately I have started to receive more specific UX -demands from customers, and hence it is time to step up my skillset.
 
 Here I will try to document my learning process and various challenges, I will surely encounter.
