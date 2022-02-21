@@ -1,7 +1,7 @@
 # Applying TDD goodness for cumbersome CMDB integration
 
 ## Context
-I hoped I could apply TDD development to all things in ServiceNow. But now the amount of more crucial issues and deadlines have shifted my focus elsewhere. However, I have encountered few situations where TDD is a necessary step to ensure the initial implementation can be done efficiently.   
+I hoped I could apply TDD development to all things in ServiceNow. Now I have been forced to shift my focus elsewhere due to crucial issues and deadlines. However, I have encountered few situations where TDD is a necessary step to ensure the initial implementation can be done efficiently.   
 
 ## The problem
 There is a SNOW <-> ServiceNow -CMDB integration plugin for ServiceNow (SNOW does not refer to ServiceNow, but to Snow Software). The plugin is utilized to populate CMDB in ServiceNow with the data from SNOW. As one might guess, getting just the basic integration to work has its usual set problems. Add there the customer requirements to modify & control data and you have a good chunk of high tier ServiceNow configuration to tackle. The 3rd party plugin adds its own flavor to the situation, as one needs to investigate its source code in order to understand the solution being configured.
