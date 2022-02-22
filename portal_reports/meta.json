@@ -1,9 +1,10 @@
 {
-    "publishDate": "2022-01-15",
-    "published":"no",
-    "title":"SABSA foundation summary",
-    "categories": "Architecture",
-    "initialTimeRequired":"01:15:00", 
-    "proofingTimeRequired":"00:00:00",
-    "description": "My own notes for SABSA certification exam"
+    "publishDate": "2022-02-22",
+    "published":"yes",
+    "title":"How to publish dashboards into portal for end users",
+    "categories": "Development, Architecture",
+    "initialTimeRequired":"00:40:00", 
+    "proofingTimeRequired":"00:15:00",
+    "description": " Data & Reports are nice, let your end users enjoy those as well",
+    "coverPic": "https://source.unsplash.com/8qwtCeJ5cLYs"
 }
