@@ -25,6 +25,7 @@ The solution is a bit dirty due to iframe, but I feel no shame as it gets the jo
 ## Configuration tips
 
 **Dashboard browser widget**
+
 HTML
 
       <a class="col-lg-3" ng-repeat="dashboard in c.data.dashboards"
@@ -46,6 +47,7 @@ Server Script
 	}
 
 **Dashboard content widget**
+
 HTML
 
     <iframe style="overflow: auto; height: 750px; width: 100%;"
