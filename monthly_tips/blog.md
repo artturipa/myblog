@@ -22,4 +22,5 @@ Note also that before trying this you should try global code search via Studio.
 
 ### Ensure that emails are shown in activity journal
 
-Most common mistake is that user's role is missing from property: **glide.ui.activity.email_roles**. In addition, email sending should be active in the instance. Emails with Sent-Ready -status are not displayed in the activity journal. 
+Most common mistake is that user's role is missing from property: **glide.ui.activity.email_roles**. In addition, email sending should be active in the instance. Emails with Sent-Ready -status are not displayed in the activity journal.
+

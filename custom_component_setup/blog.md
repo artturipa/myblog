@@ -106,3 +106,10 @@ Change it to:
     {
         "components": {
         "xyzab-component-name": { ...
+
+
+## Fix "process is not defined" error in component development
+
+1) Add "react-error-overlay": "6.0.9" into your package.json file, inside devDependencies
+
+2) Run npm i --save-dev react-error-overlay@6.0.9 from your project folder.
