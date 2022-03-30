@@ -110,6 +110,6 @@ Change it to:
 
 ## Fix "process is not defined" error in component development
 
-1) Add "react-error-overlay": "6.0.9" into your package.json file, inside devDependencies
+1) Add "react-error-overlay": "6.0.9" into devDependencies in package.json
 
-2) Run npm i --save-dev react-error-overlay@6.0.9 from your project folder.
+2) Run npm i --save-dev react-error-overlay@6.0.9 
