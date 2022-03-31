@@ -2,13 +2,13 @@
 
 ## The problem
 
-My customer had a really tough requirement to visualise data in a custom component. The data is polled via scripted rest API. Scripted Rest API queries and processes a big bunch of data, and the calculation is slow, which then results to subpar user experience for the user interacting with the component.
+My customer had a tough requirement to query, process and visualise data for end users in their UI. The data fetched to UI via Scripted Rest API. It queries and processes a big bunch of data, and the calculation is slow, which then results to subpar user experience for the user interacting with the component.
 
-This is something that wouldn't be an issue, if ServiceNow would have a cache functionality in Scripted Rest APIs. It's a reasonable wish to have, ServiceNow has done it elsewhere, such as for remote tables. 
+This is something that wouldn't be an issue, if ServiceNow would have a built in cache functionality to custom APIs. It's a reasonable wish to have, ServiceNow has done it elsewhere (__remote tables__). 
 
-## Solution
+## Solution = Build Your Own Cache!
 
-Create table with fields:
+Create a table with fields:
 * Response
 * Path
 * QueryParams
@@ -17,8 +17,7 @@ Create table with fields:
 
 Create new class (=Script Include), **cacheUtils**, with functions **getRecentResultIfExist** and **insertResponseToCache**.
 
-In Scripted Rest API's resources, change the script to something like below:
-
+In Scripted Rest API's resources, modify the script to something like below:
 
     var cacheUtils = new cacheUtils();
 	var recentResultIfExist = cacheUtils.getRecentResultIfExist(qParamsObj,pathParamsObj,request.uri);
@@ -34,6 +33,7 @@ Also, be sure to define flushing logic for the cache. No need to store records f
 When you are writing the functions, utilise JSON.parse and JSON.stringify functions to convert request parameters to valid query strings and back.
 
 ## Result
-Response time
-~5000ms --> ~100ms
+Response time improved ~98%, from 5000ms to 100ms.
+
+[<img src="https://raw.githubusercontent.com/artturipa/myblog/main/rest_cache/cahcegraph.png">](graph)
 
