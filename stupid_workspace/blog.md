@@ -38,7 +38,7 @@ https://docs.servicenow.com/bundle/quebec-application-development/page/administe
 
 ## Lists not loading
 
-Try adding **canvas_user** role to the users using the workspace. Then create record in **sys_ux_applicability_m2m_list_list** for each list link, and make them refer to same list applicapility, which can be created in the process.
+Try adding **canvas_user** role to the users using the workspace. Then create record in **sys_ux_applicability_m2m_list_list** for each list link, and make them refer to same list applicapility **sys_ux_applicability**, which can be created in the process.
 
 Thanks to user barry, more discussion here:
 https://community.servicenow.com/community?id=community_question&sys_id=4b6e88c3dbbd30d4fb115583ca9619ad 
