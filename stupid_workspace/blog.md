@@ -44,3 +44,6 @@ Thanks to user barry, more discussion here:
 https://community.servicenow.com/community?id=community_question&sys_id=4b6e88c3dbbd30d4fb115583ca9619ad 
 
 
+## Delete experience
+
+Remove from **sys_ux_page_registry**
