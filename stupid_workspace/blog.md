@@ -38,7 +38,7 @@ https://docs.servicenow.com/bundle/quebec-application-development/page/administe
 
 ## Lists not loading
 
-Try adding **canvas_user** role to the users using the workspace. Then create new list applicability -record in **sys_ux_applicability_m2m_list_list**
+Try adding **canvas_user** role to the users using the workspace. Then create record in **sys_ux_applicability_m2m_list_list** for each list link, and make them refer to same list applicapility, which can be created in the process.
 
 Thanks to user barry, more discussion here:
 https://community.servicenow.com/community?id=community_question&sys_id=4b6e88c3dbbd30d4fb115583ca9619ad 
@@ -47,3 +47,9 @@ https://community.servicenow.com/community?id=community_question&sys_id=4b6e88c3
 ## Delete experience
 
 Remove from **sys_ux_page_registry**
+
+## Specify content in form headers
+
+Do it via table **sys_aw_form_header**, you might need to touch records in **sys_ux_header_config** and **sys_ux_m2m_workspace_header_ux_header_config** as well.
+
+Note that in **sys_aw_form_header** there is Workspace attribute, which is not visible out of the box. Add it to the form and clear the value.
