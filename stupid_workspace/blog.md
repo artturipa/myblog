@@ -53,3 +53,12 @@ Remove from **sys_ux_page_registry**
 Do it via table **sys_aw_form_header**, you might need to touch records in **sys_ux_header_config** and **sys_ux_m2m_workspace_header_ux_header_config** as well.
 
 Note that in **sys_aw_form_header** there is Workspace attribute, which is not visible out of the box. Add it to the form and clear the value.
+
+## Control Access to configurable workspace
+
+Create following ACL:
+
+* Type = ux route
+* Name = APP_NAMESPACE.COMPANY_PREFIX.APPSCOPE.home (for example: x.1232.booker.home)
+* Operation = Read
+* Role = add required roles

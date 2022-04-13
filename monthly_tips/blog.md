@@ -24,3 +24,12 @@ Note also that before trying this you should try global code search via Studio.
 
 Most common mistake is that user's role is missing from property: **glide.ui.activity.email_roles**. In addition, email sending should be active in the instance. Emails with Sent-Ready -status are not displayed in the activity journal.
 
+## March
+
+Nothing learnt, I was skiing.
+
+## April
+
+Check if user is from portal, might be usable in advanced ACLs or in view rules:
+
+    var isInPortal = gs.action.getGlideURI().toString().startsWith('api/now/sp');
