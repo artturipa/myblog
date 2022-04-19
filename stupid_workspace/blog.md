@@ -62,3 +62,30 @@ Create following ACL:
 * Name = APP_NAMESPACE.COMPANY_PREFIX.APPSCOPE.home (for example: x.1232.booker.home)
 * Operation = Read
 * Role = add required roles
+
+## Highlighted values from old to new workspaces
+
+To be done in **sys_highlighted_value**. Clear the value in "workspace" attribute.
+
+## Remove "+"-icon which suggests creating new records
+
+Look for records with "Description = Tabs Configuration" in table **sys_ux_page_property**, and modify the JSON. 
+
+The value to be: 
+
+    {
+    "contextual":[
+        "record"
+    ],
+
+    "maxMainTabLimit":10,
+    "maxTotalSubTabLimit":30
+    }
+
+## Edit List actions such as "Assign to Me" or "New"
+
+Check **sys_declarative_action_assignment**
+
+## Fix notifications
+
+From related lists "Contents", add new content and mark it as Workspace 
