@@ -26,10 +26,14 @@ Most common mistake is that user's role is missing from property: **glide.ui.act
 
 ## March
 
-Nothing learnt, I was skiing.
+* Nothing learnt, I was skiing.
 
 ## April
 
 Check if user is from portal, might be usable in advanced ACLs or in view rules:
 
     var isInPortal = gs.action.getGlideURI().toString().startsWith('api/now/sp');
+
+Type "help" and press tab in SN syntax editor to display available macros.
+
+When doing logic for user interaction, use .setDisplayValue for GlideDateTime to prevent problems with differing time zones.
