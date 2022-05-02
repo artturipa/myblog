@@ -113,3 +113,7 @@ Change it to:
 1) Add "react-error-overlay": "6.0.9" into devDependencies in package.json
 
 2) Run npm i --save-dev react-error-overlay@6.0.9 
+
+## Fix "Instance version 'Sandiego' unsupported!" -error on deployment
+
+Set property glide.security.diag_txns_acl to true
