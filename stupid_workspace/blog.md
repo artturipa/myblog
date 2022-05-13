@@ -88,4 +88,9 @@ Check **sys_declarative_action_assignment**
 
 ## Fix notifications
 
-From related lists "Contents", add new content and mark it as Workspace 
+From related lists "Contents", add new content and mark it as Workspace.
+
+## Enable workspace notifications for larger user groups
+
+Increase the value of property: **glide.ui_notification.max_recipients**
+
