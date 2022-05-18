@@ -37,3 +37,9 @@ Check if user is from portal, might be usable in advanced ACLs or in view rules:
 Type "help" and press tab in SN syntax editor to display available macros.
 
 When doing logic for user interaction, use .setDisplayValue for GlideDateTime to prevent problems with differing time zones.
+
+## May
+
+Change instance logo in Polaris UI / Next experience
+
+edit properties **glide.product.image** and/or **glide.product.image.light**. [More on Docs](https://docs.servicenow.com/en-US/bundle/sandiego-platform-user-interface/page/administer/navigation-and-ui/concept/c_ModifyTheBanner.html).
