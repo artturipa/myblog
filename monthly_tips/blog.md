@@ -43,3 +43,6 @@ When doing logic for user interaction, use .setDisplayValue for GlideDateTime to
 Change instance logo in Polaris UI / Next experience
 
 edit properties **glide.product.image** and/or **glide.product.image.light**. [More on Docs](https://docs.servicenow.com/en-US/bundle/sandiego-platform-user-interface/page/administer/navigation-and-ui/concept/c_ModifyTheBanner.html).
+
+Enable highlighted values in Next Experience:
+In **sys_highlighted_value**, Remove value from **workspace** attribute.
