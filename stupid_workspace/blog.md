@@ -86,6 +86,12 @@ The value to be:
 
 Check **sys_declarative_action_assignment**
 
+## Hide list actions such as "New"
+
+Open **sys_declarative_action_assignment** and search for records defined for **global** table and **list** . Then open the relevant record and check related list Action Exclusions **sys_workspace_declarative_action_exclusion**, add record there.
+
+Note that you can't select tables from scoped apps to be excluded. However, you can create a new exclusion record, and force the table name with background script to be the table you want from scoped app. Outcome seems to be the same, but it definitely isn't a good practice. 
+
 ## Fix notifications
 
 From related lists "Contents", add new content and mark it as Workspace.
