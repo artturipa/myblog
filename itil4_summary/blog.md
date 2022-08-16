@@ -1,0 +1,146 @@
+# ITIL4 - what's the fuzz?
+
+During the past decade IT has been transforming to be more business & capability -centric. This transformation has led to many standards and frameworks to renew their content to better reflect the reality of today's practices.
+
+So now, we can leave ITIL3 to the past, may the processes rest in peace, and focus to new and shiny ITIL4. I have decided to partake the certification exam to keep my understanding and credentials fresh. Here are my notes of the content.
+
+## Key definitions
+
+**Value and creation of value**
+* Value - perceived benefit
+* Service Provider - Organization who provides services
+* Service Consumer - Organization who consumes services
+* Customer - Defines requirements for a service and is responsible of the outcomes of service consumption
+* Sponsor - Authorizes budget for service consumption
+* User - Role who uses services
+
+**Services, products and resources**
+* Service - Mean of enablin value co-creation by facilitation wanted outcomes without customer having to manage costs or risks
+* Product - A configuration of resources designed to offer value for a service consumer
+* Service offering - One or more services that address needs of consumer groups
+
+**Service Relationships**
+* Service Relationship management - activitivities performed by service provider and service consumer to facilitate value co-creation
+* Service provision - activities performed by service provider to provide services
+* Service consumption - activities performed by service consumer to consume services
+
+**Outcomes and outputs**
+* Output - Tangible or intangible deliverable of an activity
+* Outcome - Result for a stakeholder enabled by output(s)
+
+**Costs and risk**
+* Costs - Amount of money spent on an activity or a resource
+* Risk - Possible event that migth cause harm or loss
+
+**Utility and warranty**
+* Utility - functionality offered by a product or service
+* Warranty - assurance that a product or service meets requirements
+
+## Four dimensions of Service Management System
+1. **Organizations & People**
+    Org. structures, culture, roles, responsibilities, skills...
+2. **Information & Technology**
+    information, knowledge, technology, relationships between components...
+3. **Partners & Suppliers**
+    Relationships between organizations being relevant to services, contacts, agreements...
+4. **Value streams & processes**
+    Activities, workflows, controls, procedures...
+
+These dimensions ensure holistic approach to service management. The dimensions represent perspectives that are relevant to the whole - oranisations should ensure that there is a balance in focus between each dimension.
+
+## Seven guiding principles of ITIL
+
+The guiding principles:
+* Are recommendations to guide organizations
+* Support succesful actions and good decisions
+* Ensure common understanding and approach
+* Are universally applicable
+
+### The principles
+
+1. **Focus on Value**
+    Map every action to value.
+2. **Start Where You Are**
+    Consider what is already available and investigate current state.
+3. **Progress iteratively with feedback**
+    Do not attempt to do everything at once. Use feedback to ensure correct focus of actions.
+4. **Collaborate and promote visibility**
+    Cooperate across boundaries to have better buy-in. Work should be visible.
+5. **Think and work holistically**
+    No service / element stands alone. Outcomes suffer if focus is put into parts and not to the whole.
+6. **Keep it simple and practical**
+    Eliminate things that do not provide value. Use minimum number of steps to accomplish the objectives.
+7. **Optimize and automate**
+    Resources and technology should be used to their best effects. Use human intervention only when it brings value.
+
+## ITIL Service Value System(SVS)
+SVS ensures that organization continually co-creates value by using and managing products and services.
+
+Service Management works properly only if it works as a system. SVS describes the **input** to this system, the **elements** of the system and the **outputs**.
+
+**Opportunity** and **demand** are key inputs, and the output is **value**.
+
+Components of SVS:
+* Guiding principles
+* Governance
+* Service Value Chain
+* Practices
+* Continual Improvement
+
+SVS describes the value creation in the system and supports many approaches to work. The architecture components of SVS enable flexibility and discourage siloed working.
+
+## Service Value Chain
+is a set of activities organization performs to deliver to its customers.
+* **Deliver and support** 
+Ensuring delivery and support for services as specified
+* **Acquire / Build**
+Ensuring that services components are available when needed
+* **Design and transition** Ensuring that services continually meet their requirements
+* **Engage** 
+Providing engagement and understanding of stakeholder needs
+* **Improve**
+Ensuring continual improvement
+* **Plan**
+Enabling shared understanding of vision, status and direction of services.
+
+## The ITIL Practices
+A Practice is a set of organizational resources designed for performing a work or fulfilling an objective. Practices support activities in service value chain and provide a comprehensive toolset for ITSM practitioners.
+
+### General Management Practices
+
+**Continual Improvement**
+Align practices and services with changing business requirements.
+
+**Information Security Management**
+
+**Relationship Management**
+
+**Supplier Management**
+
+### Service Management Practices
+
+**IT Asset Management**
+
+**Monitoring and Event Management**
+
+**Release Management**
+
+**Service Configuration Management**
+Ensure reliable information about configurations of services
+
+**Change Enablement**
+Maximize number of succesful changes by ensuring proper handling of risks and authorizations.
+
+**Incident Management**
+
+**Problem Management**
+
+**Service Desk**
+Point of communication capturing the demand for incident resolution and service requests.
+
+**Service Level Management**
+Asses, monitor and manage performance of services.
+
+###Technical Management Practices
+**Deployment Management**
+Moving new or changed deployments to live environments.
