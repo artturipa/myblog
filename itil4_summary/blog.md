@@ -49,13 +49,13 @@ The components of the **service value system** are ‘guiding principles’, ‘
     * Service Value Chain
     * Practices, total of **34**, of which **15** are covered in Foundation
     * Continual Improvement
-* **Service Value Chain** - Operating model defining key activities required to respond to demand and enable value creation. Has six activities that turn inputs into outputs:
-    * Plan
-    * Improve
-    * Engage
-    * Design and transition
-    * Obtain/Build
-    * Deliver and support
+* **Service Value Chain** - Operating model defining key activities required to respond to demand and enable value creation. Has six activities that turn inputs into outputs by using combination of practices:
+    * **Plan** - Ensures a shared understanding of the vision, current status and improvement direction
+    * **Improve** - Ensures continual improvement of products, services and practices
+    * **Engage** - Provides understanding of stakeholder needs to maintain good relationships with all stakeholders
+    * **Design and transition** - Ensures that products and services continually meet stakeholder expectations
+    * **Obtain/Build** - Ensures that service components are available
+    * **Deliver and support** - Ensures that services are delivered and supported
 * **Value Stream** - a series of steps used by organization to create and deliver products and services to service consumers. A combination of value chain activities. **Value chains can contain multiple value streams.**
 * **Critical Success Factor (CSF)** - necessary precondition for achieving intended results
 * **Management Practice** - set of organizational resources to perform work or accomplish an objective
