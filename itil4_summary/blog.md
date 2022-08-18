@@ -17,6 +17,10 @@ The components of the **service value system** are ‘guiding principles’, ‘
 ## Key definitions
 
 * **Value** - perceived benefit
+* **Process** - Activities that transform inputs into outputs
+* **Practice** - organizational resources designed for accomplish an objective
+* **Configuration Item (CI)** - Any component that needs to be managed to deliver an IT service
+* **IT asset** - Any valuable component that can contribute to services or products
 * **Service Provider** - Organization who provides services
 * **Service Consumer** - Organization who consumes services
 * **Customer** - Defines requirements for a service and is responsible of the outcomes of service consumption
@@ -28,7 +32,7 @@ The components of the **service value system** are ‘guiding principles’, ‘
 * **Service offering** - One or more services that address needs of consumer groups. Based on one or more products. Different offerings can be created based on same products.
 * **Typical components of service offering** - Goods (exmpl: laptop), Access to resources (exmpl: internet), Service actions (exmpl: user support)
 * **Service Relationship management** - activitivities performed by service provider and service consumer to facilitate value co-creation
-* **Service Relationship** - Cooperation of service provider and service consumer
+* **Service Relationship** - Cooperation of service provider and service consumer. Service relationships include service provision, service consumption and service relationship management.
 * **Service provision** - activities performed by service provider to provide services
   * Includes management of resources, access to resources, fulfillment of agreed service actions, service level management and continual improvement.
 * **Service consumption** - activities performed by service consumer to consume services
@@ -37,9 +41,9 @@ The components of the **service value system** are ‘guiding principles’, ‘
 * **Outcome** - Result for a stakeholder enabled by output(s)
 * **Costs** - Amount of money spent on an activity or a resource
 * **Risk** - Possible event that migth cause harm or loss
-* **Utility** - functionality offered by a product or service
-* **Warranty** - assurance that a product or service meets requirements
-* **Service Value System (SVS)** - Explains how components and activities of the organisation enable value creation. Holds five components:
+* **Utility** - Functionality offered by a product or service
+* **Warranty** - Assurance that a product or service meets requirements
+* **Service Value System (SVS)** - System that ensures that an organization continually co-creates value. Explains how components and activities of the organisation enable value creation. Holds five components:
     * Guiding Principles
     * Governance
     * Service Value Chain
@@ -168,7 +172,7 @@ Point of communication capturing the demand for incident resolution and service 
 * **Service Level Management**
 Asses, monitor and manage performance of services.
 
-###Technical Management Practices
+### Technical Management Practices
 * **Deployment Management**
 Moving new or changed deployments to live environments.
 
@@ -190,4 +194,3 @@ Services facilitate outcomes for a customer.
 
 Utility and warranty are important to services. Utility determines 'fit for purpose' and warranty 'fit for use'.
 
-### Guiding Principles
