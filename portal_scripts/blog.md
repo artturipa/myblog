@@ -9,18 +9,26 @@ Note, this is well documented by ServiceNow, for more examples check the [refere
 
 **HTML Link**
 
-            <a href="javascript:void(0);" ng-click="c.modalScript()" />
+            <a href="javascript:void(0);" ng-click="c.modalScript(inputVar)" />
 
 **Client Script**
 
+    c.modalScript = function(inputVar) {
 
-c.modalScript = function () {
-    spModal.confirm('${Confirmation question?}').then(function(answer) {
-        if (answer === true) {
-            console.log("poistoon")
-        }
-    });
-}
+		spModal.open(
+			{
+				title: '${your title here}',
+				message: '${your message here}',
+				buttons: [
+					{label:'✘ ${Cancel}', cancel: true},
+					{label:'✔ ${Proceed}', primary: true}
+				]
+			}).then(function() {
+                // Do something if proceeded
+			}).then(function() {
+                // Do something if cancelled
+            })
+	}
 
 ## Client -> Server -> Client
 
