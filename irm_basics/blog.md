@@ -23,6 +23,8 @@ Classify entities, type is used in scoping (risk statements and control objectiv
 
 Generic issue, for example an operational risk event, compliance violation, security breach etc. ServiceNow does not provide detailed issue workflow, so customers are free to implement structure that fits them.
 
+#### Risk Statement
+
 #### Risk event
 *sn_risk_advanced_event*
 
@@ -47,4 +49,53 @@ Parent class of different types of tasks that are used to respond to risks. Chil
 
 ##### Risk Transfer
 *sn_risk_transfer_task*
+
+### Compliance
+
+#### Control Objective
+*sn_compliance_policy_statement*
+
+Control objective that does not relate to any individual entity, but to one or many entity types. Control objective holds the information on what type of questionnaire (Attestation) to use.
+
+#### Controls
+*sn_compliance_control*
+
+Controls, created separately for individual entities. Relates to Entity and Control Objective
+
+#### Control Attestation
+*asmt_assessment_instance*
+
+a test in a form of questionnaire, which tests whether an individual control is implemented. Actually exists in assessment instance table.
+
+#### Control Test
+*sn_audit_control_test*
+
+a test, which tests whether an individual control is effective from design and operational standpoint. 
+
+### Audit
+
+#### Plans
+*sn_audit_advanced_plan*
+
+Used to plan audits and engagements, scope the audits correctly and ensure that costs are kept in control.
+
+#### Auditable units
+*sn_audit_advanced_auditable_unit*
+
+#### Engagements
+*sn_audit_engagement*
+
+a project like structure, which is used to conduct an audit.
+
+#### Audit tasks
+*sn_audit_task*
+
+Generic tasks which are completed throughout an engagement.
+
+#### Test plans
+*sn_audit_test_plan*
+
+Used to describe how a feature is to be tested. References control
+
+####
 
