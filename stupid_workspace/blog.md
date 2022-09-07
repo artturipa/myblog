@@ -100,3 +100,6 @@ From related lists "Contents", add new content and mark it as Workspace.
 
 Increase the value of property: **glide.ui_notification.max_recipients**
 
+## Copy pages or edit page properties when UI Builder does not work
+
+Check out **sys_ux_macroponent**

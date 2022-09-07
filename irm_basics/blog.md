@@ -23,12 +23,19 @@ Classify entities, type is used in scoping (risk statements and control objectiv
 
 Generic issue, for example an operational risk event, compliance violation, security breach etc. ServiceNow does not provide detailed issue workflow, so customers are free to implement structure that fits them.
 
+### Risk
+
+#### Risk
+*sn_risk_risk*
+
+a Risk, relates to entity and risk statement. Extends Control/Risk *sn_grc_item* table. Risks have a following standard lifecycle: Draft - Assess - Respond - Review - Monitor - Retired.
+
 #### Risk Statement
 
 #### Risk event
 *sn_risk_advanced_event*
 
-Potential or actual losses and near misses.
+Potential or actual losses and near misses. 
 
 #### Risk Response Task
 *sn_risk_response_task*
@@ -60,7 +67,7 @@ Control objective that does not relate to any individual entity, but to one or m
 #### Controls
 *sn_compliance_control*
 
-Controls, created separately for individual entities. Relates to Entity and Control Objective
+Controls, created separately for individual entities. Relates to Entity and Control Objective. Extends Control/Risk *sn_grc_item* table. Risks have a following standard lifecycle: Draft - Attest - Review - Monitor - Retired.
 
 #### Control Attestation
 *asmt_assessment_instance*
@@ -95,7 +102,6 @@ Generic tasks which are completed throughout an engagement.
 #### Test plans
 *sn_audit_test_plan*
 
-Used to describe how a feature is to be tested. References control
+Used to describe how a feature is to be tested. References a control.
 
-####
 
