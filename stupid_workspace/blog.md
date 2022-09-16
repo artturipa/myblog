@@ -103,3 +103,7 @@ Increase the value of property: **glide.ui_notification.max_recipients**
 ## Copy pages or edit page properties when UI Builder does not work
 
 Check out **sys_ux_macroponent**
+
+## Change page path when UI Builder does not work
+
+Check out **sys_ux_app_route**
