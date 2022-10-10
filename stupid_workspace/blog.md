@@ -107,3 +107,13 @@ Check out **sys_ux_macroponent**
 ## Change page path when UI Builder does not work
 
 Check out **sys_ux_app_route**
+
+## Enable Edge Encryption to work in workspace lists
+
+At least in Tokyo -version, there is still a bug which makes it impossible to decrypt values in list components. 
+
+It is possible to circumvent the problem by setting following properties:
+
+* glide.ui.list.batching.exclusion = list the tables considered
+* glide.uxf.lib.batchGQLEffectRequests = false
+* glide.uxf.lib.classic.batchGQLEffectRequests = false
