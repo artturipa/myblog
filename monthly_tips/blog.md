@@ -41,3 +41,7 @@ In **sys_highlighted_value**, Remove value from **workspace** attribute.
 ### UI Action Visibility exists
 
 Table ** ** provides a simple way to configure which UI Actions are shown in a view. You need to do the record to same scope where the UI Action in question is.
+
+### Monitor user transactions that happen in workspace
+
+Useful, if you need to backtrack which users have opened which records. Logs are stored in **syslog_transactions**, look for module **Transactions (All)** in application navigator.
