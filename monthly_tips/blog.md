@@ -40,7 +40,7 @@ In **sys_highlighted_value**, Remove value from **workspace** attribute.
 
 ### UI Action Visibility exists
 
-Table ** ** provides a simple way to configure which UI Actions are shown in a view. You need to do the record to same scope where the UI Action in question is.
+Table **sys_ui_action_view** provides a simple way to configure which UI Actions are shown in a view. You need to do the record to same scope where the UI Action in question is. And to find out the right UI Action, one can find the sys_id with browser's developer tools in page DOM. Sys_id of the UI Action is the **gsft_id** attribute of the corresponding **&lt;button&gt;** -element
 
 ### Monitor user transactions that happen in workspace
 
