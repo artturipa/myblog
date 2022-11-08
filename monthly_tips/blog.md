@@ -45,3 +45,7 @@ Table **sys_ui_action_view** provides a simple way to configure which UI Actions
 ### Monitor user transactions that happen in workspace
 
 Useful, if you need to backtrack which users have opened which records. Logs are stored in **syslog_transactions**, look for module **Transactions (All)** in application navigator.
+ 
+### Build process to ensure CMDB data is up to date
+
+It might be hard to decide whether a record in CMDB is up to date. Even if details of a record have been checked, no value has necessarily changed. ServiceNow has **Data Certification** application which creates tasks to validate data, and via these tasks one can ensure that CMDB is up to date.
