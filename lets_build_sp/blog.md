@@ -25,4 +25,23 @@ For the portal to be reusable and good it should fulfill below criteria
 * Extensible
 * Pleasant UI & Visual Design
 
-## 
+## Solution
+
+To ensure transferability and limit decoupling, the portal is created as a scoped application in ServiceNow.
+
+### Branding and customisation
+
+The portal refers ServiceNow's basic La Jolla -theme, and certain set of CSS variables are defined in CSS variables field of the portal record. When the portal is deployed to a new instance, branding can be configured in the portal record.
+
+### Homepage
+
+A new page is created for homepage. Home page in order to add a custom background to homepage, it needs to be done as a page specific CSS.
+
+Background picture for portal's home page can be set nicely with following css:
+
+    body {
+        background: url("imagelocation");
+        background-repeat: no-repeat;
+        background-position: center 60px;
+        background-size: auto 520px;
+    }

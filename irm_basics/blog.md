@@ -79,6 +79,8 @@ a test in a form of questionnaire, which tests whether an individual control is 
 
 a test, which tests whether an individual control is effective from design and operational standpoint. 
 
+Control test does not include an questionaire / assessment functionality. Filling the information is intended for fulfiller users.
+
 ### Audit
 
 #### Plans
