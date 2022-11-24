@@ -49,3 +49,22 @@ Useful, if you need to backtrack which users have opened which records. Logs are
 ### Build process to ensure CMDB data is up to date
 
 It might be hard to decide whether a record in CMDB is up to date. Even if details of a record have been checked, no value has necessarily changed. ServiceNow has **Data Certification** application which creates tasks to validate data, and via these tasks one can ensure that CMDB is up to date.
+
+### Set calendar's week start on Monday (or any other day)
+
+Server side:
+    data.userLanguage = gs.getSession().getLanguage();
+
+
+Client side
+    moment.updateLocale(scope.data.userLanguage, {
+        week: { dow: 1 } // Set to one, if Monday is desired
+    });
+
+### Circumvent terrible slowness of Decision Table's
+
+The API provided by ServiceNow is terrible. It takes several seconds to complete with few hunderd rows. Forget the API, and build direct gliderecord query to actual table behind decision table (such as sys_decision_question).
+
+
+
+
