@@ -65,6 +65,10 @@ Client side
 
 The API provided by ServiceNow is terrible. It takes several seconds to complete with few hunderd rows. Forget the API, and build direct gliderecord query to actual table behind decision table (such as sys_decision_question).
 
+### Get sys_id of record to be generated in catalog client script:
 
+    if(parent.angular) { 
+5 | 	var sysIdOfNewRecord = parent.angular.element("#sc_cat_item").scope().data._generatedItemGUID; 
+6 | } 
 
 

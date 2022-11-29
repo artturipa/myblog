@@ -45,3 +45,11 @@ Background picture for portal's home page can be set nicely with following css:
         background-position: center 60px;
         background-size: auto 520px;
     }
+
+## Instructions
+
+1. Export latest default portal application
+2. Import application to instance
+3. Rename name of application to customer's context
+4. Edit content what is being displayed on sp_rectangle_menu_item  
+5. 
