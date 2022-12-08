@@ -117,3 +117,11 @@ It is possible to circumvent the problem by setting following properties:
 * glide.ui.list.batching.exclusion = list the tables considered
 * glide.uxf.lib.batchGQLEffectRequests = false
 * glide.uxf.lib.classic.batchGQLEffectRequests = false
+
+## Edit details in contextual sidebar
+
+This needs to be done via UI Builder.
+1. Open workspace in UI Builder
+2. Navigate to record -page
+3. From right part of the page, look up contextual sidebar
+4. Open the specific sidebar and make changes there
