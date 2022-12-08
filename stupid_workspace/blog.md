@@ -125,3 +125,5 @@ This needs to be done via UI Builder.
 2. Navigate to record -page
 3. From right part of the page, look up contextual sidebar
 4. Open the specific sidebar and make changes there
+
+If UI Builder bugs and does not allow you to save, edit JSON in the record via platform UI, table **sys_ux_macroponent**. 
