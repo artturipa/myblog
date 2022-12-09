@@ -26,7 +26,11 @@ Check if user is from portal, might be usable in advanced ACLs or in view rules:
 
     var isInPortal = gs.action.getGlideURI().toString().startsWith('api/now/sp');
 
+### Check syntax macros
+
 Type "help" and press tab in SN syntax editor to display available macros.
+
+### Avoid DateTime conversion issues
 
 When doing logic for user interaction, use .setDisplayValue for GlideDateTime to prevent problems with differing time zones.
 
