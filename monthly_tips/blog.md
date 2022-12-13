@@ -80,3 +80,10 @@ The API provided by ServiceNow is terrible. It takes several seconds to complete
 1. Disable the glide.ui.ref_ac.startswith system property
 2. Create new user preference for the refernced table and leave user empty. Name of the user preference: "REFERENCED_TABLE.autocomplete.contains"
 
+## NiceError exists, and it gives a stack trace
+
+    var msg = new NiceError("Your log message")
+    gs.info(msg);
+
+Kudos to [Luke from Community](https://www.servicenow.com/community/developer-articles/use-niceerror-to-generate-better-log-messages/ta-p/2404286)
+
