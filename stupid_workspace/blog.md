@@ -127,3 +127,14 @@ This needs to be done via UI Builder.
 4. Open the specific sidebar and make changes there
 
 If UI Builder bugs and does not allow you to save, edit JSON in the record via platform UI, table **sys_ux_macroponent**. 
+
+## Create new overview tab to record page, or edit an existing one
+
+The details live in table table **sys_ux_screen_type**, so you can check existing logic and try to reverse engineer that.
+
+The steps are something like below. Detailed instructions in [this great video by Naveen](https://www.youtube.com/watch?v=3V8yWfdAf48).
+
+1. Create a new page, and set parameters to table and sys_id
+2. Navigate to **sys_ux_screen_type** and create new record, name it for example **TABLE_LABEL overview collection** 
+3. Navigate to **sys_ux_app_route** and select previously created record as **screen collection**, and set **Route** to the value that the automatically created UX App Route has.
+4. Create new record for **sys_ux_screen** and set the newly created page for **page definition**, and parent macroponent to where the page wants to be rendered, so **record page tabs**.
