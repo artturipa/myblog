@@ -86,4 +86,3 @@ The API provided by ServiceNow is terrible. It takes several seconds to complete
     gs.info(msg);
 
 Kudos to [Luke from Community](https://www.servicenow.com/community/developer-articles/use-niceerror-to-generate-better-log-messages/ta-p/2404286)
-
