@@ -75,4 +75,8 @@ The API provided by ServiceNow is terrible. It takes several seconds to complete
 5 | 	var sysIdOfNewRecord = parent.angular.element("#sc_cat_item").scope().data._generatedItemGUID; 
 6 | } 
 
+## Change "STARTSWITH" default search to "CONTAINS" in reference variables
+
+1. Disable the glide.ui.ref_ac.startswith system property
+2. Create new user preference for the refernced table and leave user empty. Name of the user preference: "REFERENCED_TABLE.autocomplete.contains"
 
