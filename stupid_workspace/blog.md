@@ -139,6 +139,8 @@ The steps are something like below. Detailed instructions in [this great video b
 3. Navigate to **sys_ux_app_route** and select previously created record as **screen collection**, and set **Route** to the value that the automatically created UX App Route has.
 4. Create new record for **sys_ux_screen** and set the newly created page for **page definition**, and parent macroponent to where the page wants to be rendered, so **record page tabs**.
 
+Note that the label of the tab comes from name of the record in **sys_ux_app_route**.
+
 ## Change default landing page
 
 Change landing path in **sys_ux_app_config** to page's path. If it does not work, change also route in **sys_ux_app_route**. For me, the change did not take effect immediately.
