@@ -150,3 +150,8 @@ Change landing path in **sys_ux_app_config** to page's path. If it does not work
 This, again, is an extremely stupid thing I spent 30 minutes debugging. Usually the setting is found via UI Builder in "Edit experience settings". However, in some instances that setting is missing. 
 
 In those cases, locate the links via **sys_ux_page_property**, look for **chrome_toolbar**, and edit JSON in Value field.
+
+## Edit content and labels displayed in workqueue -page (IRM workspace)
+
+Here: **sn_grc_workspace_applicable_table**
+
