@@ -80,9 +80,28 @@ The API provided by ServiceNow is terrible. It takes several seconds to complete
 1. Disable the glide.ui.ref_ac.startswith system property
 2. Create new user preference for the refernced table and leave user empty. Name of the user preference: "REFERENCED_TABLE.autocomplete.contains"
 
-## NiceError exists, and it gives a stack trace
+### NiceError exists, and it gives a stack trace
 
     var msg = new NiceError("Your log message")
     gs.info(msg);
 
 Kudos to [Luke from Community](https://www.servicenow.com/community/developer-articles/use-niceerror-to-generate-better-log-messages/ta-p/2404286)
+
+### Updates from apprepo are missing??
+
+They are most likely skipped due to modifications in prod. Check and activate skipped updates from **sys_upgrade_history**
+
+### Next Experience only for some users
+
+Set these properties
+* glide.ui.polaris.experience (true/false) = true
+* glide.ui.polaris.on_off_user_pref_enabled = true
+
+Also, create an user preference
+- glide.ui.polaris.use (string) = false (This sets so that Next Experience is disabled by default)
+
+After these steps, users can find "Turn on Next Experience" from user preferences / display.
+
+### Control Next Experience Top Bar links
+
+**sys_polaris_menu_config_list**

@@ -88,3 +88,26 @@ However, if you have multiple ng-repeats inside each other, this will not work. 
             </td>
         </tr>
     </tbody>
+
+## Interact with record producer via Macro/Widget variable
+
+You should be able to grab g_form with 
+    
+    g_formInject = $scope.page.g_form
+
+Depending on how "deep" the scope of your widget in question is, finding the g_form might not be trivial. Use this script to locate it:
+ 
+	var g_formFound =false;
+	var i = 0;
+	var currentScope = $scope;
+	var g_formInject;
+	while (g_formFound === false && i <100) {
+		i++;
+		if (currentScope.page && currentScope.page.hasOwnProperty("g_form")) {
+			g_formFound = true;
+			g_formInject = currentScope.page.g_form;
+		} else {
+			currentScope = currentScope.$parent;
+		}
+	}
+	
