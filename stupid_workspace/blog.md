@@ -155,3 +155,11 @@ In those cases, locate the links via **sys_ux_page_property**, look for **chrome
 
 Here: **sn_grc_workspace_applicable_table**
 
+## Open form and prepopulate it with query values:
+
+To Workspace UI Action, put following:
+
+    var query = 'column_name_here=' + 'value_here';
+    g_aw.openRecord(tableName, '-1',{
+        query: query
+    })
