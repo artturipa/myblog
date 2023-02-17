@@ -105,3 +105,7 @@ After these steps, users can find "Turn on Next Experience" from user preference
 ### Control Next Experience Top Bar links
 
 **sys_polaris_menu_config_list**
+
+### license_role table exists and is great
+
+Check that out asap. There one can see whether a role is counted as fulfiller, business stakeholder or requester. 
