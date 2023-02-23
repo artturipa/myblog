@@ -109,3 +109,11 @@ After these steps, users can find "Turn on Next Experience" from user preference
 ### license_role table exists and is great
 
 Check that out asap. There one can see whether a role is counted as fulfiller, business stakeholder or requester. 
+
+### UI Builder - Pass parameters to viewport, such as contextual sidebar -page
+
+1. In UI Builder go to the parent page that contains the viewport. In terms of contextual sidebar the parent page is **record**.
+2. There, select __Body__ from **content**, in config tab in right, there is a small gear icon where you can define properties, click it.
+3. There, check the properties if they contain what you need. If not, create a new property that is populated somehow.
+4. In child page, do the same thing, defien a page property to use.
+5. Then, in **Body**'s properties, set the newly created property's value to @context.props.NAME_OF_THE_PROPERTY_IN_PARENT_PAGE
