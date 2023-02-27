@@ -163,3 +163,14 @@ To Workspace UI Action, put following:
     g_aw.openRecord(tableName, '-1',{
         query: query
     })
+
+
+## Fetch information via script from data resource
+
+The outcome might be stored either to **output** or **results** -property. 
+
+Like this:
+    api.data.DATA_RESOURCE_NAME.output.data...
+    api.data.DATA_RESOURCE_NAME.results.data...
+
+You might need this if you wan't to use the outcome as a scripted property value. Then the outcome needs to be assigned to client state parameter via data resource events, which is then passed on to the component. 
