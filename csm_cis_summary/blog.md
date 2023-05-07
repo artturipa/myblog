@@ -222,6 +222,46 @@ Removes manual routing of work and prevents cherry picking tasks
 
 
 ### Roles
+https://docs.servicenow.com/en-US/bundle/utah-customer-service-management/page/product/customer-service-management/reference/r_RolesInstalledWithCustomerService.html 
+
+*CSM Primary Roles*
+
+B2C
+* sn_customerservice.consumer_agent
+* sn_customerservice_manager
+
+B2C 
+* sn_customerservice.consumer
+
+B2B
+* sn_customerservice_agent
+* sn_customerservice_manager
+
+B2B Customer
+* sn_customerservice.customer
+* sn_customerservice.customer_admin
+* sn_customerservice.customer_case_manager
+
+B2B Partner
+* sn_customerservice.partner
+* sn_customerservice.partner_admin
+
+*CSM Base Roles*
+* sn_esm_agent
+* sn_esm_admin
+* sn_esm_partner
+* sn_esm_partner_admin
+* sn_esm_user
+* sn_esm_user_admin
+
+_Customer Service Agents_
+* sn_customerservice_agent
+* sn_customerservice_consumer_agent
+
+_Customer Service Manager_ - Customer service agent with the additional responsibility for managing agents or agent groups and overriding agent actions.	
+* sn_customerservice_manager
+
+
 
 *Assignment workbench* 
 * Assignment workbench [assignment_workbench] - Provides access to the assignment workbench for customer service agents and consumer service agents.
