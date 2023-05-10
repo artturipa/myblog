@@ -139,7 +139,11 @@ The steps are something like below. Detailed instructions in [this great video b
 3. Navigate to **sys_ux_app_route** and select previously created record as **screen collection**, and set **Route** to the value that the automatically created UX App Route has.
 4. Create new record for **sys_ux_screen** and set the newly created page for **page definition**, and parent macroponent to where the page wants to be rendered, so **record page tabs**.
 
-Note that the label of the tab comes from name of the record in **sys_ux_app_route**. One might has to change label for the change to take effect.
+Note that the label of the tab comes from name of the record in **sys_ux_app_route**.
+
+## Change label of the Workspace tab.
+
+As stated above, the label comes from **sys_ux_app_route**. On some occasions, the label is correct but it is not displayed in correctly in the workspace. Then try to change the label once and see if the change takes effect. 
 
 ## Change default landing page
 
