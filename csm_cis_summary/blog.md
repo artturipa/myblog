@@ -29,7 +29,7 @@ Below are key notes that I recapped for CIS exam.
 
 **Models** are specific versions of items in the environment. Model record allows maintaining information about the specific model ensuring data consistency.
 
-**Model Categories** are part of Product Catalog and they associate CI classes with Asset classes. Model category configuration specifies whether an asset is created from a CI. 
+**Model Categories** are part of Product Catalog and they associate CI classes with Asset classes. Model category configuration specifies whether an asset is created from a CI. Model Categories are set to Product Models.
 
 **Product Portfolio** is comprised of all the products an organization has to offer.
 
@@ -73,9 +73,9 @@ Below are key notes that I recapped for CIS exam.
 **Post Case Review**
 After resolution of a case, one can trigger post case review to capture details about resolved case, affected assets, root cause, resolution and preventive measures.
 
-**Installed Products** is a class, which connects *Install base items* to _Sold products_
+**Installed Products** is a class, which connects **Install base items** to **Sold products**
 
-**Agent Whisper** allows users with *awa_manager*-role to join chat conversations and chat privately with the customer service agent.
+**Agent Whisper** allows users with __awa_manager__-role to join chat conversations and chat privately with the customer service agent.
 
 **Parent/child synchronization** allows one to control the child case behaviour through the parent record. Admins can control which fields cascade. It only goes one level deep and closed/resolved cases are not synced.
 
@@ -300,9 +300,8 @@ After resolution of a case, one can trigger post case review to capture details 
 
 
 ### Roles
-https://docs.servicenow.com/en-US/bundle/utah-customer-service-management/page/product/customer-service-management/reference/r_RolesInstalledWithCustomerService.html 
 
-*CSM Primary Roles*
+**CSM Primary Roles**
 
 B2B & B2C
 * sn_customerservice_manager
