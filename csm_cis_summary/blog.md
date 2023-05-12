@@ -12,23 +12,61 @@ Below are key notes that I recapped for CIS exam.
 
 **CSM Application scope** includes Cases, Accounts, Contacts, Service Contracts and Entitlements, Assets and product models, Service Portals and/or CMS, Knowledge base and reporting
 
+**ServiceNow's industry solutions are built on top of CSM**. Industry solutions include Telco, Financial Services, Healthcare and Public Sector
+
+**Service-aware install base** allows organizations to:
+* Model complex products and services with components
+* Quickly identify products sold and installed
+* Track related operational services and configuration items that affect service health
+* View products not yet purchased or deployed by customers
+
+**Service-aware install base entities** include:
+* Product Model
+* Install Base Item
+* Installed product
+
 **Product** is a good or a Service that a company sells to, and supports for their customers.
 
-**Model Categories** associate CI classes with Asset classes. Model category configuration specifies whether an asset is created from a CI. NEEDS TO BE CHECKED
+**Models** are specific versions of items in the environment. Model record allows maintaining information about the specific model ensuring data consistency.
 
-**Asset** is a specific product instance which is purchased / subscribed by a customer. Asset Management is activated when CSM is installed.
+**Model Categories** are part of Product Catalog and they associate CI classes with Asset classes. Model category configuration specifies whether an asset is created from a CI. 
 
-**Contact** - Member of an external company. Customer user in B2B -model, contact can be related to only one account. They are not able to login into the system unless an user record is created for them (for example via self registration approval process) TO BE CHECKED
+**Product Portfolio** is comprised of all the products an organization has to offer.
 
-**Customer Support Agent** - Users of the organisation who provide customer service and work with cases. Agents are organised on groups and skilled on specific products.
+**Asset** [alm_asset] is a specific product instance which is purchased / subscribed by a customer. Asset Management is activated when CSM is installed. Five different asset classes are:
+* Hardware Assets [alm_hardware]
+* Software License Assets [alm_license]
+* Consumables [alm_consumable]
+* Enterprise Software Assets [alm_application_software]
+* Facility Assets [alm_facility]
+
+**Contact** - Member of an external company. Customer user in B2B -model, contact can be related to only one account. They are not able to login into the system unless an user record is associated with them, user record is created automatically. Customer Service Managers and System Administrators can create contacts.
+
+**Customer Service Agents** - Users of the organisation who provide customer service and work with cases. Agents are organised on groups and skilled on specific products.
+
+**Service Management** connects customer service to the rest of the organization, making collaboration about customer issues with other departments easier.
 
 **Tier 3 support agent**  is a person with compherensive knowledge of a particular area
 
-**Customer Support Agent Manager** oversees operations in customer service including service delivery, personel management and escalations
+**Customer Service Supervisors and Managers** oversees operations in customer service including service delivery, personel management and escalations
 
-**Customer Service Executive** is a person responsible for the overall customer service organization
+**Business Managers and Executives** is a person responsible for the overall customer service organization
+
+**Business Contributors** sales managers, account managers, etc.
 
 **Core Master Data** is often referenced by the case, includes accounts, contacts, users, products, assets, locations and groups
+
+**Account** stores the Account’s information, such as name, account number, primary contact, phone number, address, and company website address. 
+* Only Customer Service Manager and System Administrators can create accounts.
+* Account can have multiple addresses but only one primary address. Primary address is included in **Addresses** related list with Primary set as **true**
+
+**Account Relationship Types** - System Administrator can create additional relationship types. Default relationships are:
+* Partner-to-account
+* Account-to-account
+
+**Account Hierarchy** allows modeling legal entity structure and their relationships. A relationship can be created by System Administrator or Customer Service Manager. Customer admins are able to view cases, assets and users for all the subsidiaries under their own account.
+
+**Contact Relationships** enable admins and/or managers to add contacts under multiple accounts. Hence, same contact can be associated with multiple accounts.  
 
 **Account Path** - Is automatically generated code which tells the hierarchy of a given account. Max depth is 63 levels.
 
@@ -45,16 +83,9 @@ After resolution of a case, one can trigger post case review to capture details 
 
 **Advanced Work Assignemnt** removes manual routing of work and prevents cherry picking tasks.
 
-**Self Registration** allows contacts to self register via portal by submitting registration request. Consumers are not supported. TO BE CHECKED
-
-TO BE CHECKED
-**Support Model** tells how support is provided. Two options are:
-* Entitlement only
-* Entitlement plus service contracts
+**Self Registration** allows contacts to self register via portal by submitting registration request. 
 
 **Unified portals** allow easy configuration of multiple portals with unified look & feel and a unified navigation menu structure.
-
-**Time Recording** TO BE CHCECKED
 
 **Benefits of Proactive Customer Service Operations**
 1. Faster resolution time
@@ -71,7 +102,7 @@ TO BE CHECKED
 2. Planned outage
 3. Degradation
 
-**Social Profiles** are TO BE CHECKED, and they can be created by Customer Service Managers. Social profiles can be associated to Account, Contact and Consumer
+**Social Profiles** can be created for an accont, contact or consumer. And they can be created by Customer Service Managers. Social profiles can be associated to Account, Contact and Consumer
 
 **Entitlement** - Defines the support customer receives and supported channels for the customer. Is measured by cases and/or hours. Entitlements can be made of products, assets and/or contracts (cascades to assets covered).
 
@@ -141,11 +172,11 @@ TO BE CHECKED
 * Agents can manually close a case, if resolution code and -notes are filled.
 * From case to knowledge article following fields are copied: Short Description, Cause, Close Notes (-> Resolution) 
 * Special handling notes can be created via "Form Link" -button or via Special handling notes module.
-* Assignment Workbench default configuration uses **Recommendation for Case Assignment** matchin rule, which uses three of the four default matching criteria: TO BE CHECKED
+* Assignment Workbench default configuration uses **Recommendation for Case Assignment** matching rule, which uses three of the four default matching criteria:
     * Availability Today
     * Matching Skills
     * Assigned Cases
-    * Last assigned
+    * Not used: Last assigned
 * Customer Service Agents are the ones who manage case escalations
 * Account escalation manager manages account escalations
 * To use Time Recording, following steps need to be taken:
@@ -219,7 +250,7 @@ TO BE CHECKED
 
 **Customer Survey is sent** when case is closed.
 
-**Business rules associated with Self Registration registration code** TO BE CHECKED
+**Business rules associated with Self Registration registration code**
 * "Display request message" - Shows info message to user
 * "Display rule" - Shows message to remind user to enter a correct registration code
 
@@ -246,13 +277,19 @@ TO BE CHECKED
 * Customer Service Portal [com.glide.service-portal.customer-portal]
 * Targeted Communications [com.sn_publications]
 * Customer Service [com.sn_customerservice]
+* Customer Service Install Base Management [com.snc.install_base] / is needed for Service-aware install base features
 * Performance Analytics - Content Pack - Customer Service [com.snc.pa.customer_service]
 * CTI Softphone [com.snc.cti] / Enables customer service and Twilio using notify
 
 **CSM integration to other modules**
 * Customer Service with Field Service Management plugin (com.snc.csm_fsm_integration)
 * Integration with Financial Management
-* Customer Service integration with Service Management
+* Customer Service integration with Service Management [com.sn_cs_sm]
+* Customer Service with Request Management [com.sn_cs_sm_request]
+* Integration to Problem Management functionalities
+    * Problem Management Best Practice - Madrid [com.snc.best_practice.problem.madrid]
+    * Problem Management Best Practice - Madrid - State Model [com.snc.best_practice.problem.madrid.state_model]
+* Customer Service Case Action Status [com.snc.csm_action_status] - Provides actionable case flows.
 
 **Knowledge Management**
 * For translation: I18N:Knowledge Management Internationalization v2 plugin [com.glideapp.knowledge.i18n2]
@@ -267,16 +304,13 @@ https://docs.servicenow.com/en-US/bundle/utah-customer-service-management/page/p
 
 *CSM Primary Roles*
 
+B2B & B2C
+* sn_customerservice_manager
+* sn_customerservice_agent
+
 B2C
 * sn_customerservice.consumer_agent
-* sn_customerservice_manager
-
-B2C 
 * sn_customerservice.consumer
-
-B2B
-* sn_customerservice_agent
-* sn_customerservice_manager
 
 B2B Customer
 * sn_customerservice.customer
@@ -341,7 +375,6 @@ It provides limited write access to those cases for which the user already has r
 [sn_customerservice.csm_workspace_user] - Provides access to CSM workspace
 
 ### Roles installed with the Customer Service Base Entities plugin
-TO BE CHECKED
 * Service management agent [sn_esm_agent]
 * Service management partner [sn_esm_partner]
 * Service management user admin [sn_esm_user_admin]
@@ -350,7 +383,7 @@ TO BE CHECKED
 * Service management partner admin [sn_esm_partner_admin]
 * Role for REST APIs related to CSM web services [csm_ws_integration]
 
-*Assignment workbench* 
+**Assignment workbench**
 * Assignment workbench [assignment_workbench] - Provides access to the assignment workbench for customer service agents and consumer service agents.
     * Contains Skill user[skill_user]
 
@@ -371,8 +404,11 @@ TO BE CHECKED
     * Default value = yes
 
 **Knowledge management**
-* glide.knowman.search.default_language allows forcing a default language for knowledge articles.
+* **glide.knowman.search.default_language** allows forcing a default language for knowledge articles.
 * _"Enable access control of Knowledge Bases based on product entitlements"_ -property exists.
+
+**CMDB**
+* **sn_customerservice.use_asset_contact_relationship** can be used to restrict contact access to assets. When enabled, only assets where the user is a contact are shown.
 
 ### Specifics
 
@@ -384,7 +420,16 @@ TO BE CHECKED
 
 **Generic entitlement** is a product entitlement without a company.
 
-**Entitlement counter** calculates whenever a case with an associated entitlement is closed. It only runs if the _per unit_ field is enabled TO BE CHECKED
+**External customers and/or partners can view and approve requests and change requests**. They can also see ITSM tickets that relate to a case they have access to.
+
+**CSM Guided Setup includes**
+* Percentage of activities completed
+* Controls to start, skip, and mark tasks as complete
+* Plugin management
+* Links between CSM and other applications (including ITSM, ITOM, SPM, KM, PPM)
+* A link to Community and FSM Guided Setup
+
+**Entitlement counter** calculates whenever a case with an associated entitlement is closed. It only runs if the _per unit_ field is enabled.
 
 **Cases can be created from questions on portals by:**
 * Service Agents
@@ -395,6 +440,12 @@ TO BE CHECKED
 * /tq - transfer to queue
 * /ta - transfer to agent
 * /r - use response template
+
+**Account address types:**
+* Primary (only one is allowed)
+* Billing
+* Shipping
+* Custom
 
 #### Communities
 
@@ -445,14 +496,17 @@ TO BE CHECKED
 
 **Associating Partner with an Account** causes partner to inherit all child accounts.
 
+**Partner Account** - Accounts can be customer, partner or customer&partner accounts. Partner accounts support customer accounts, and they can report and manage cases on behalf of customer accounts. 
+
+**Third party** is an organization that has been contracted to sell products and services they have **purchased** from another organization. 
+
+**Third party owns the relationship with a customer**. A partner __does not own the relationship__ with a customer, the relationship is owned by the organization they are partnering.
+
 **Partner contacts** can be associated with assets.
 
 **In case of multiple Openframe configurations**, the one with lowest order is assigned to user.
 
-**There is only one type of CSM Entitlement:** "Entitlement Only"
-TO BE CHECKED
-
-**Email addresses for CSM** are configured in _Channel configuration_ TO BE CHECKED
+**Email addresses for CSM** are configured in _Channel configuration_ [comm_channel_config]
 
 **Chat queues activated via CSM Plugin** are Customer Service and Customer Service Support
 
@@ -470,19 +524,7 @@ TO BE CHECKED
 * Matching Service catalog
 * Matching Case
 
-**Asset contact relationships** contain Asset, Account and Contacts from the specified account.
-
-**Product model types are:** TO BE CHECKED
-* Application Model
-* Consumable Model
-* Contract Model
-* Software Model
-* Bundle
-* Consumable
-* Contract
-* Facility
-* Hardware
-* Software
+**Asset Contact** - Administrators can add a primary contact to an asset. When added, the primary contact is also added as an Asset Contact to the corresponding related list by __Add Primary Contact__ -business rule.
 
 * All WebDAV -compliant knowledge content can be improved from external knowledge sources.
 * Following activities are available offline in FSM mobile application:
@@ -491,11 +533,3 @@ TO BE CHECKED
     3. Manage assets
 * If a company wants to support Twitter, Twitter profile details should be stored in *Social profile*
 
-
-
-https://quizlet.com/ca/588535526/servicenow-csm-fundamentals-flash-cards/
-72 menossa
-https://quizlet.com/271242864/servicenow-cis-csm-customer-service-management-flash-cards/52 menossa 
-
-https://quizlet.com/390375005/servicenow-cis-csm-exam-prep-pt2-flash-cards/
-xx 
