@@ -48,11 +48,11 @@ Below are key notes that I recapped for CIS exam.
 
 **Tier 3 support agent**  is a person with compherensive knowledge of a particular area
 
-**Customer Service Supervisors and Managers** oversees operations in customer service including service delivery, personel management and escalations
+**Customer Service Supervisors and Managers** oversee operations in customer service including service delivery, personel management and escalations
 
-**Business Managers and Executives** is a person responsible for the overall customer service organization
+**Business Managers and Executives** are responsible for the overall customer service organization
 
-**Business Contributors** sales managers, account managers, etc.
+**Business Contributors** are sales managers, account managers, etc.
 
 **Core Master Data** is often referenced by the case, includes accounts, contacts, users, products, assets, locations and groups
 
@@ -70,8 +70,7 @@ Below are key notes that I recapped for CIS exam.
 
 **Account Path** - Is automatically generated code which tells the hierarchy of a given account. Max depth is 63 levels.
 
-**Post Case Review**
-After resolution of a case, one can trigger post case review to capture details about resolved case, affected assets, root cause, resolution and preventive measures.
+**Post Case Review** - After resolution of a case, one can trigger post case review to capture details about resolved case, affected assets, root cause, resolution and preventive measures.
 
 **Installed Products** is a class, which connects **Install base items** to **Sold products**
 
@@ -81,7 +80,7 @@ After resolution of a case, one can trigger post case review to capture details 
 
 **Assignment Workbench** enables customer service managers to assign tasks to agents. Workbench uses configurable criteria such as skills and availability to evaluate agents in a selected group to provide overall ranking. 
 
-**Advanced Work Assignemnt** removes manual routing of work and prevents cherry picking tasks.
+**Advanced Work Assignment** removes manual routing of work and prevents cherry picking tasks.
 
 **Self Registration** allows contacts to self register via portal by submitting registration request. 
 
@@ -140,7 +139,7 @@ After resolution of a case, one can trigger post case review to capture details 
 
 **Response Template** are reusable messages that can be copied to a case or task from.
 
-**Agent Affinity** is AN AWA feature that allows assigning agent tasks based on following details:
+**Agent Affinity** is an AWA feature that allows assigning agent tasks based on following details:
 * Historical tasks
 * Related Tasks
 * Account team
@@ -148,15 +147,11 @@ After resolution of a case, one can trigger post case review to capture details 
 
 **Case Action Summaries** provide updates to customers and internal stakeholders while case is in progress. Summaries are closed when the case is closed.
 
-**Skill Based Routing**
+**Skill Based Routing** allows ranking users so that right user can be selected based on skill required to solve the task.
 
-**Order**
+**Order** [csm_order] store orders, and Order line items [csm_order_line_item] store individual line items relating to orders. Order Cases [csm_order_case] store information about customer service cases related to orders.
 
-**Publication**
-
-**Contracts** - Can be associated to sold products.
-
-**Real-time SLAs**
+**Publication** is one way for targeted communication, it allows tracking which recipients have viewed the contract.
 
 **Service Contract** contracts group together SLAs that relate to a single vendor or customer, as well as the CIs, locations, groups, users, and child contracts that are related to the contract.
 
@@ -165,7 +160,6 @@ After resolution of a case, one can trigger post case review to capture details 
 **Openframe** Provides a communication frame for agents for customer calls. It allows CTI capability with multiple telephony service providers.
 
 **Resolution Shaper** - Timeline that is shown in case record. There blue circle represents state change and line represents any other activity than state change. Customers' updates are below, agents updates are above.
-
 
 ## Default Settings
 * Flow of states in case is new, open, awaiting info, resolved, closed
@@ -232,9 +226,6 @@ After resolution of a case, one can trigger post case review to capture details 
     * Core master data
     * Cases
     * Attachments for cases and knowledge records
-
-
-
 
 ## Configurations
 
