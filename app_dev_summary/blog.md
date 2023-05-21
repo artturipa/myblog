@@ -1,3 +1,7 @@
+# Moar certificates
+
+Next up, CAD exam. Below my notes.
+
 ## Application Development Overview
 
 * Cloud-Based Application
@@ -17,7 +21,6 @@
     * Need to propriatery libraries without APIs
     * Games or applications that require graphic engines
     * No process flow through application
-
 * Differences scoped vs global applications
     * Scoped  
         * Scoped Sparate Namespace
@@ -31,6 +34,10 @@
     * Modifying global applications
     * Required resources not available from scopes
     * Extensive reliance on global resources 
+* Global Scope applications can bypass scope protections, allowing them to:
+    * Read records
+    * Run API requests
+    * Create Configuration records
 * Scoped Development Process phases
     1. Analysis
     2. Design
@@ -175,6 +182,7 @@ Are useful for:
 * onLoad()
 * onSubmit()
 * onChange()
+    * Has parameters (control, oldValue, newValue, isLoading, isTemplate)
 
 **Client script APIs include**
 * g_user
@@ -270,6 +278,51 @@ About **Script Includes:**
 
 ## Import and Integrate
 
+* Integration Interfaces
+    * Authentication
+    * Integration Hub
+    * File Import
+    * File Export
+    * URL Access
+    * Platform Web Services
+    * Scripted Web Services
+    * Database
+    * Email
+
+**Import Data via Guided App Creator:**
+* Create Table from Upload Spreadsheet
+* Upload XLSX
+* Define Schema
+* Create Table
+
+**REST Message** records are:
+* Used to develop, prototype, and save outbound REST messages
+* Reusable in Business Rules, Email Notifications, and other server-side scripts
+
+**Web Service** is a web-based method allowing applications to connect to other software applications over a network
+
+**ServiceNow recommendations**
+* Always clean up data before importing into ServiceNow
+* Understand the format/structure/contents of the data before importing
+* When importing, determine how to coalesce
+* Study and understand what a web services expects to receive and the format of the response
+* Test REST Message Functions
+* Do NOT practice with the REST API Explorer on a production instance
+
+## Testing
+
+**Software Testing Lifecycle**
+1. Requirement Analysis
+2. Test Planning
+3. Test Case Development
+4. Environment Setup
+5. Test Execution
+6. Test Cycle Closure
+
+**SN Test Management** is for manual tests, and it manages all phases of the testing process
+* Test Repository contains tests, test cases and test suites
+* Test execution contains Test environments and Test plans
+
 ## Specifics
 
 * It is recommended to create a System Property Category and a Module for set of (ordered) properties
@@ -282,18 +335,100 @@ About **Script Includes:**
     * Created + Created by
     * sys_id
     * Updates (number of updates for the record)
-* ctrl-spacebar provides list of classes in a script
 * Display Business Rules can be used to pass string values to client via g_scratchpad,
 * Table.None ACL is needed in order to view table's list or form
 * Application Protection Policies only apply if application is published to ServiceNow Store
 * In Scheduled Script, anything that has been a variable in the __condition__ field, are available to the script itself
 * Only Notifications with the highest weight for the same record and recipients are sent (+ notifications with 0 weight)
 * Users have Notification-field, which defines whether the user is receiving notifications
+* Script Actions respond to events, and have two objects they can access:
+    * Event Object containing the parameters
+    * Current = object passed in from gs.eventQueue()
+* REST Message Variable Substitutions are used when testing a HTTP Method
+* Table record has Related Link UI Action "Add to Service Catalog", which is a shortcut to create record prodcuer for the table. 
+* The platform is a __contextual__ development environment
+* **Runtime Access Tracking** can be used to manage script access to resources from other applications. This is known as cross-scope access, as the records are in different scopes. Settings are:
+    * **None** - No authorization required for application scripts to access resources as long as the other application allows it. No record is being created in the Application Cross-Scope Access -table.
+    * **Tracking** - Allows application scripts to access resources from other applications. A record for the access is automatically inserted in the Application Cross-Scope Access table, with __Status__ value of __Allowed__.
+    * **Enforcing** - Allows application scripts to access resources only after administrator has authorized the access. The cross-scope access record is automatically created with __Status__ as __Requested__.
+* Script API and Web Services can be refered as **Runtime access points**
+* Application Creation Options
+    * Start from scratch 
+        * Empty Application, for example if application just has one configuration record
+    * Create a custom application 
+        * For applications that include UIs and Data elements
+    * Start from a template
+    * Start from an existing service 
+        * Converts existing service to an application if **Service Creator** is active
+    * Start from global
+        * In order to do it, property **glide.app.creator.global** needs to be __true__
+* Update Sets track customizations to tables that have **update_synch** dictionary attribute
+* **Special Handlers** are used to track changes that affect multiple tables. Following changes are tracked with special handlers
+    * Workflows
+    * Form sections
+    * Lists
+    * Related lists
+    * Choice lists
+    * System dictionary entries
+    * Field labels
+* Application scope can have only one **default update set**
+* $m.do gives the mobile version of the application
+* **Embedded list** is a form element, which allows editing related lists without having to navigate away from the form. Changes are saved when the form is saved
+* **Response time indicator** is a form element, which appears at the bottom of some forms to indicate the processing time require to display the form
+* **Override Application Menu roles** option allows granting module level access to role that is not allowed to view the application.
+* **Document feed** is a live feed group that is associated with a record. Functionality is used when one follows a record.
+* **Import Data Sources**
+    * CSV
+    * JDBC
+    * FTP
+    * HTTP
+    * XML
+* Unpublished workflow won't be captured in a update set
+* Event **system.upgraded** verifies system upgrade
+* Types of UI Actions
+    * Form buttons
+    * Form context menu items
+    * Form links
+    * List Buttons
+    * List context menu ites
+    * List Choices (at the bottom of a list)
+
+### Team Development
+* **Team Development** supports parallel development on multiple sub-production instances. Also following features are provided:
+    * Branching operations, including pushing and pulling record versions between instances
+    * The ability to compare a development instance to other development instances
+    * A central dashboard for all Team Development activities
+* **Local Changes** table tracks which customized records have current versions on the development instance but not on the parent instance
+* Team Development uses **Version Records** to manage versions (not Git)
+* **Team Development credentials** give access to administrate remote instances, push changes to parent instance and use __Code Review Requests__ -module
+* User with admin or **teamdev_user** role has access to register a remote instance, and do other team development actions.
+* User with admin or **teamdev_code_reviewer** role has access to Code Review Requests module.
+* **Exclusion Policies** allow developers to prevent pushes or pulls to particualr instance in the development hierarchy.
+* Team Development Administrators can require that pushes undergo **Code Review** before acceptance
+* When **Code Review** is enabled, pushes to parent instance trigger the Code Review __workflow__
+* Code Review -workflow sends notifications to __reviewers group__ when push __requires a code review__ or when __a user cancels a push__.
+
+    
+
+## Actually useful
+
 * Adding links to notifications:
     * ${URI}: link to open the record, with label LINK
     * ${URI_REF}: link to open the record, with label Display Name
     * ${<reference_field_name>.URI}: link to open a related record, with label LINK
     * ${<reference_field_name>.URI_REF}: link to open a related record, with label Display Name
-* Script Actions respond to events, and have two objects they can access:
-    * Event Object containing the parameters
-    * Current = object passed in from gs.eventQueue()
+* ctrl-spacebar provides list of classes in a script
+* Pass script into Email notification via <mail_script> </mail_script>, there print values with template.print() -method. When saved, system will ask to save it as a email notification script -record
+* Indicators when editing Access Controls
+    * Red text: An Access Control that was activated or deactivated
+    * Blue text: An Access Control that was modified
+    * Green text: An Access Control that is added or has become active
+    * Masked: An Access Control that was effective until you made a change
+    * Unmasked: An Access Control that was made effective when you made a change
+* ACL debug indicators:
+    * Green: Access granted
+    * Red: Access denied
+    * Blue: Not re-evaluated, already in cache
+    * Gray: Not evaluated, part of the rule has already denied access
+    * Checkmark: Passed
+    * X: Failed

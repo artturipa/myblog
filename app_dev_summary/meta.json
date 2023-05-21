@@ -1,10 +1,10 @@
 {
-    "publishDate": "2021-05-10",
-    "published":"no",
-    "title":"About enterprise architecture",
-    "categories": "Architecture",
+    "publishDate": "2023-05-21",
+    "published":"yes",
+    "title":"Scripting & Application Development summary",
+    "categories": "Development",
     "initialTimeRequired":"01:15:00", 
     "proofingTimeRequired":"00:00:00",
-    "description": "Reflections inspired by TOGAF.",
-    "coverPic": "https://source.unsplash.com/gySMaocSdqs/800x500"
+    "description": "Another set of notes for certification exam.",
+    "coverPic":"https://source.unsplash.com/HH4WBGNyltc"
 }
