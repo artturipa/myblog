@@ -132,12 +132,17 @@ If UI Builder bugs and does not allow you to save, edit JSON in the record via p
 
 The details live in table table **sys_ux_screen_type**, so you can check existing logic and try to reverse engineer that.
 
-The steps are something like below. Detailed instructions in [this great video by Naveen](https://www.youtube.com/watch?v=3V8yWfdAf48).
+The steps are something like below. Detailed instructions in [this great video by Nawin](https://www.youtube.com/watch?v=3V8yWfdAf48).
 
 1. Create a new page, and set parameters to table and sys_id
 2. Navigate to **sys_ux_screen_type** and create new record, name it for example **TABLE_LABEL overview collection** 
 3. Navigate to **sys_ux_app_route** and select previously created record as **screen collection**, and set **Route** to the value that the automatically created UX App Route has.
-4. Create new record for **sys_ux_screen** and set the newly created page for **page definition**, and parent macroponent to where the page wants to be rendered, so **record page tabs**.
+4. Create new record for **sys_ux_screen** and set the newly created page for **page definition**, and parent macroponent to where the page wants to be rendered, so **record page tabs**. Also, for Macroponent configuration add info about the properties, so that the child page can access the properties from the parent macroponent. Here an example:
+    
+    {
+    "table": "@context.props.detailsProps.table",
+    "sysId": "@context.props.detailsProps.sysId"
+    }
 
 Note that the label of the tab comes from name of the record in **sys_ux_app_route**.
 
@@ -178,3 +183,7 @@ Like this:
     api.data.DATA_RESOURCE_NAME.results.data...
 
 You might need this if you wan't to use the outcome as a scripted property value. Then the outcome needs to be assigned to client state parameter via data resource events, which is then passed on to the component. 
+
+## Can't change the label of a form Action? 
+
+Look up whether the answer could lie in table **sys_ux_form_action_layout_item**

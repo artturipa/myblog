@@ -111,3 +111,25 @@ Depending on how "deep" the scope of your widget in question is, finding the g_f
 		}
 	}
 	
+## Change URL parameter and reload page
+
+This simple thing is hard to find via google. Therefore here for future use:
+
+    // Update URL-parameter
+    $location.search('parameter_name', new_value);
+
+    // Reload page
+    c.server.update().then(function() {
+            $window.location.reload();
+    });
+
+
+## Changing first day of week of the date picker
+
+    moment.updateLocale("en", { 
+        week: { dow: 1 } // 1 = Monday
+    });
+   
+    moment.updateLocale("fi", {  // Add other languages if needed
+        week: { dow: 1 } 
+    }); 
