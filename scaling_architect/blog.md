@@ -18,14 +18,13 @@ If architect won't do this, who will? This one is a requirement that has recentl
 ## Be a direct contributor to key development initiatives
 I might be biased here, because I like development and I don't think I am yet totally ready to give up that part of my job. Usually development is not responsibility of an architect. However, as architect might be most senior technical expert in the team, his/her development contribution can be crucial when new types of development challenges that can't be solved by common developers emerge.
 
-## Empower developers to act as independently as possible
+## Enable developers to act as independently as possible
+As I can't be involved in every technical decision, I need to enable developers to make right decisions on their own. This requires education about good development practices. However, the key enabler here is that team has set of architectural principles to follow. More about that later.
 
 ## Design implementation when needed
+Architect's job is also to design translate business requirements into application structure. In the environment I am working in, the other developers are quite competent in conducting workshops and collecting details, so my involvement is not oftehn required. However, if the requirement is especially challening or something we have not done ever before, I need to step in.
 
- has partake a new customer, which has more challenges.. I cant keep up with the usual way
+## Grow maturity level of team's development practices
+Current situation is that some development is being done without appropriate updates to documentation and building automated tests is not part of standard development. There I will lead by showing example and guiding others to do the same. 
 
-What I should do
-....
-
-Next steps and plan
-..
+I have now started in the position so these are all in progress. I will write more detailed insights about these topics further down the road.

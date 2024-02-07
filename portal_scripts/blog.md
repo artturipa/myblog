@@ -133,3 +133,33 @@ This simple thing is hard to find via google. Therefore here for future use:
     moment.updateLocale("fi", {  // Add other languages if needed
         week: { dow: 1 } 
     }); 
+
+## Scroll to specific element
+
+spUtil has method to do that in client script:
+
+    spUtil.scrollTo("#ID_OF_HTML_ELEMENT",ANIMATION_TIME_IN_MS)
+
+However, the element might not be present in initial load. A lazy workaround is to use timeout:
+
+    api.controller=function(spUtil,$timeout) {
+	
+        function moveToInitialFocus() {
+            console.log("timeback called")		
+            spUtil.scrollTo("#initialfocus", 300)
+        }
+	
+		$timeout(moveToInitialFocus, 1000)
+    };
+
+## Change order of items when in mobile
+
+Add below class and css to containing div. Note that in case the items are separate widgets, you can add the class into portal page row in portal editor.
+
+    @media only screen and (max-width: 767px) {  
+        .reverse-class {    
+            flex-direction: column-reverse!important;
+        }
+    }
+
+
