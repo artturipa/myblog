@@ -1,30 +1,34 @@
-# What to do as an architect
+# Maximizing Success as an Architect: Strategies and Goals
 
-Architect has been my most common role in customer assignments for the past several years. On most cases my work has been designing basics of the application structure and coaching developers in implementation. It has been also quite common that I take some challenging development tasks for myself when needed.
+Architect has been my most common role in client projects for the past several years. My focus has been designing  application artchitecture and mentoring developers in implementation. Occasionally, I have also tackled complex development tasks myself when necessary.
 
-Recently, I started architect position for a large customer that has constantly multiple development initiatives and going on with the instance, and therefore I want to reassess how I as an architect can ensure success in an environment where there are so many developers and development initiatives going on that I can't be directly involved every time.
+Recently, I started as an architect for a major client that has constantly multiple development initiatives ongoing within the instance. This new assignment encouraged me to reconsider my approach to architect position, as now it is clear that I can't be directly involved in all development initiatives.
 
-First, a quick summary on what I would like to achieve
+and therefore I want to reassess how I as an architect can ensure success in an environment where there are so many developers and development initiatives going on that I can't be directly involved every time.
 
-## Ensure platform maintanability and flexibility
-To me, this is key priority. Architect should somehow monitor state of the solution and ensure that technical debt keeps in check. 
+Hence, here are my revised objectives as an Architect.
 
-## Watch out for more junior developers and ensure they get support when needed
-Even though architect's work by definition might not involve developments, I have realised that in practice it is common that architect sometimes needs to act as a lead developer as well. It is understandable, as it is common that architect is most senior techinical expert in the team.
+## 1. Ensure Platform Maintanability and Flexibility
+Ensuring the maintainability and flexibility of the platform is my top priority. As an architect, it's essential to monitor health of the instance and manage technical debt effectively.
 
-## Stay on top of potential security issues
-If architect won't do this, who will? This one is a requirement that has recently grown in importance. If architect can keep an eye on security issues and provide precise reports to business and security teams, the solution s/he manages is more likely to have a lasting future in the enterprise.
 
-## Be a direct contributor to key development initiatives
-I might be biased here, because I like development and I don't think I am yet totally ready to give up that part of my job. Usually development is not responsibility of an architect. However, as architect might be most senior technical expert in the team, his/her development contribution can be crucial when new types of development challenges that can't be solved by common developers emerge.
+## 2. Support Junior Developers
+By definition architect's role might not contain development. However, I've realized that often architect needs to act as a lead developer, providing support to less experienced team members. It is undestandable, as the architect is typically the most senior technical expert on the team.
 
-## Enable developers to act as independently as possible
-As I can't be involved in every technical decision, I need to enable developers to make right decisions on their own. This requires education about good development practices. However, the key enabler here is that team has set of architectural principles to follow. More about that later.
+## 3. Stay on Top of Security
+If architect won't do this, who will? Security has recently grown in importance. If architect can keep an eye on security issues and provide precise reports to business and security teams, the solution s/he manages is more likely to have a lasting future in the enterprise.
 
-## Design implementation when needed
-Architect's job is also to design translate business requirements into application structure. In the environment I am working in, the other developers are quite competent in conducting workshops and collecting details, so my involvement is not oftehn required. However, if the requirement is especially challening or something we have not done ever before, I need to step in.
+## 4. Contribute to Key Development Initiatives
+I might be biased here because I like development, and I don't think I am yet totally ready to give up that part of my job. Usually development is not responsibility of an architect. However, as architect might be most senior technical expert in the team, his/her development contribution can be crucial when new types of development challenges that can't be solved by common developers emerge.
 
-## Grow maturity level of team's development practices
-Current situation is that some development is being done without appropriate updates to documentation and building automated tests is not part of standard development. There I will lead by showing example and guiding others to do the same. 
+## 5. Enable Developer Independence
+Since it's impractical for me to participate in every technical decision, I should focus in enabling developers to make decisions on their own. This requires education about good development practices, and it helps if the team has set of architectural principles to follow. More about that later.
 
-I have now started in the position so these are all in progress. I will write more detailed insights about these topics further down the road.
+## 6. Design implementation when needed
+Translating business requirements into application architecture is another aspect of the architect's role. While the developers I work with are adept at conducting workshops and gathering details, my input is often essential for particularly challenging or extraordinary requirements.
+
+## 7. Elevate Team's Maturity with Development Practices
+Currently, some development processes lack proper documentation updates, and the incorporation of automated testing is not a standard practice. I aim to lead by example, encouraging the team to adopt these practices.
+
+## Next steps
+I have now started in the position so these are all in progress, let's see what challenges putting these into practice will bring. I will write more detailed insights about these topics further down the road. 
