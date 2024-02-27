@@ -1,10 +1,10 @@
 {
-    "publishDate": "2022-02-01",
+    "publishDate": "2024-02-27",
     "published":"yes",
-    "title":"How to retain security logs",
-    "categories": "Development",
-    "initialTimeRequired":"00:10:00", 
+    "title":"Leading architecture and instance health",
+    "categories": "Architecture",
+    "initialTimeRequired":"00:30:00", 
     "proofingTimeRequired":"00:10:00",
-    "description": "How to keep details of Security Logs for a longer time",
-    "coverPic": "http://source.unsplash.com/yekGLpc3vro"
+    "description": "Where architects should focus their time.",
+    "coverPic": "https://raw.githubusercontent.com/artturipa/myblog/main/scaling_architect/cahcegraph.png"
 }
