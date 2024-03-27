@@ -1,19 +1,38 @@
 # ServiceNow IRM in a nutshell
 I am studying for a certification exam. Here my notes.
 
+Glanced flashcards:
+https://quizlet.com/484558881/servicenow-grc-risk-and-compliance-cis-flash-cards/  (50 in)
+
+
 ## Common elements
 
 ### Entity
 * **Entity Filter** filters entities from source table, such as Companies from core_company
 * **Entity Type** is to connect risk statements and control objectives to specific types of entities, such as "vendors".
-* **Entity Type** [sn_grc_profile_type] and **Entity** [sn_grc_profile] have many to many relationship between them [sn_grc_m2m_profile_profile_type].
+* **Entity Type** [sn_grc_profile_type] and **Entity** [sn_grc_profile] have many to many relationship between them [sn_grc_m2m_profile_profile_type]. One entity can have **multiple** Entity types
 * **Entity Classes** [sn_grc_profile_class] classify entities. They are used to tag entities, add business context and organisation for reporting.
+
+Entities, Entity classes and Entity types can be created by roles Compliance Manager and Risk Manager
+
+
 
 ### Roles
 Roles sn_grc.ROLE_NAME are legacy roles, now they are separated. Legacy roles are contained in new roles. For example both sn_compliance.user and and_risk.user contain sn_grc.user.
 
+## Abbrevations
+
+* **SLE** - Single Loss Expectancy
+* **ARO** - Annualized Rate of Occurrence
+* **Annualized Loss Expectancy** - ALE
 
 ## Risk Management
+
+### Risk Framework
+is a formalized process for managing risk. Risk frameworks are used by **risk managers** to group risk statements into manageable categories.
+
+### Risk Criteria
+is a quantitative or qualitative value against which level of risk is. Risk criteria is required for the risk heatmap.
 
 ### ARA - Advanced Risk Assessment
 Differs from Classic risk assessment via:
@@ -27,6 +46,14 @@ Risk Framework **is not** relevant when using ARA. Risk values do not rollup to 
 RAM can be simulated when it is in a draft state and its assessment tyeps are published. When RAM is published, simulations are deleted.
 
 ## Compliance
+
+### Operational Perspective (example)
+1. Policy states that something should be done (__Every employee needs to renew their license annually__)
+2. Control is established to ensure compliance with the policy (__Ensure that all employees licenses are up to date__)
+3. (Entity) Owners are responsible for enforcing the control in their departemnt
+4. Owner declares that they have enforced the contol via **attestation**. Attestation can be a simple form that asks whether the control is in place.
+5. Every month, owners deploy their method to enforce the control, results are captured with **indicator** (__Check that license has been confirmed within a month__)
+6. Every year, **auditor** confirms that the enforcement of the control works as intended through **Control test**
 
 ### Contiunous Monitoring 
 Test plans are specific to controls and can be leveraged during audits. Test templates are available
@@ -94,17 +121,82 @@ Other applications can register policy exceptions with the **Integration Registr
 ### Consolidated attestation
 Allows grouping control attestation
 
-
 **Indicator** 
 
 ## Lifecycles
 
+**Policy Lifecycle**
+1. Draft
+2. Review (only reviewer can move to the next state)
+3. Awaiting Approval (if no approvers defined, policy goes straight to published)
+4. Published
+5. Retired
+
+**Control Lifecycle**
+1. Draft
+2. Attest
+3. Review (Here attestations are reviewed by compliance managers)
+4. Monitor
+5. Retired
+
+**Issue Lifecycle**
+1. New
+2. Analyze
+3. Respond
+4. Review
+5. Closed
+
+Issues can be automatically created from following scenario:
+* Indicator fails
+* Attestation results are not implemented
+* Control Test effectiveness is ineffective and state of test is closed
+* Continuous monitoring results
+
+**Policy Exception Lifecycle**
+1. New
+2. Analyze
+3. Risk Assessment
+4. Review
+5. Awaiting Approval
+6. Approved
+7. Closed
+
+Policy Exceptions can be created from:
+* Policy Exception module
+* Issues
+* Policy Statement
+* Policy
+
 ## Roles
+
+Compliance Manager and Risk Manager can create:
+* Entities, Entity classes and Entity types
+* Issues, Indicators, Remediation Tasks and Policy Exceptions
+
+Compliance Managers can create:
+* Policies 
+* Control Objectives (sometimes referred as Policy Statements)
+* Policy Exceptions
+* Controls
+* Authority Documents
+* Citations
+
+Risk Managers can create:
+* Risks
+* RIsk Frameworks
+* Risk Statements
+
+Risk Managers and Risk users can:
+* View
+    * Risk Frameworks, Risk statements, Assessments, and Risk Response Tasks
+* Create
+    * Risks
 
 ## Tables
 
-### Tips
+### Tips and specifics
 * Most base tables start with **sn_grc_**, and extended tables with **sn_**
+* SOX Content pack can be acquired via Store
 
 ### Main Tables
 * Document [sn_grc_document] [GRC: Profiles] is extended by:
