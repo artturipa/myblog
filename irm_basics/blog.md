@@ -1,7 +1,77 @@
 # ServiceNow IRM in a nutshell
-This is yet in progress. But I need this so hence already posted to the site.
+I am studying for a certification exam. Here my notes.
 
-### Essential Classes in the Data Model
+## Definitions
+
+### Entity
+* **Entity Filter** filters entities from source table, such as Companies from core_company
+* **Entity Type** is to connect risk statements and control objectives to specific types of entities, such as "vendors".
+* **Entity Type** [sn_grc_profile_type] and **Entity** [sn_grc_profile] have many to many relationship between them [sn_grc_m2m_profile_profile_type].
+* **Entity Classes** [sn_grc_profile_class] classify entities. They are used to tag entities, add business context and organisation for reporting.
+
+### ARA - Advanced Risk Assessment
+Differs from Classic risk assessment via:
+* Statement hierarchy: ARA has mulstiple levels
+* Risk Rollup: Classic risk has none
+* Assessment: In ARA scoped risks and objects can be assessed, question types are more various and multiple risk scoring systems are available. 
+
+Risk Framework **is not** relevant when using ARA. Risk values do not rollup to the framework.
+
+### RAM - Risk Assessment Methodology
+RAM can be simulated when it is in a draft state and its assessment tyeps are published. When RAM is published, simulations are deleted.
+
+### Compliance Score Calculation
+Is calculated for Control Objective. Control Objective can be related to citation (from regulation) or to Policy. Formula for the calculation considers all controls per entities that use the control:
+
+Formula: Sum of weight of compliant controls / Sum of weight of all controls * 100
+
+### Policy Acknowledgement Campaing
+* Lifecycle
+    * New
+    * Pending acknowledgement
+    * Closed
+    * cancalled
+
+### Policy Exception
+Can be requested via 
+* Self-service > Employee Center
+* Compliance Workspace
+* Policy Exceptions module
+* From control objective record
+* From issue record
+
+Other applications can register policy exceptions with the **Integration Registry**. Integration Registry is a module in Policy and Compliance > Policy Exceptions > Integration Registry. Integration Registry guides developer how Policy Exceptions can be requested from other application.
+
+**Indicator** 
+
+## Lifecycles
+
+## Roles
+
+## Tables
+
+### Tips
+* Most base tables start with **sn_grc_**, and extended tables with **sn_**
+
+### Main Tables
+* Document [sn_grc_document] [GRC: Profiles] is extended by:
+    * Authority Document [GRC: Policy & Compliance]
+    * Policy [GRC: Policy & Compliance]
+    * Risk Framework [GRC: Risk Management]
+* Content [sn_grc_content] [GRC: Profiles] is extended by:
+    * Control Objective [GRC: Policy and Compliance]
+    * Citation [GRC: Policy and Compliance]
+    * Risk Statement [GRC: Risk Management]
+* Item [sn_grc_item] [GRC: Profiles] is extended by:
+    * Control [GRC: Policy and Compliance]
+    * Risk [GRC: Risk Management]
+
+
+## 
+
+
+
+## Essential Classes in the Data Model
 
 #### Entity
 *sn_grc_profile*
