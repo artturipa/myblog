@@ -26,6 +26,8 @@ Roles sn_grc.ROLE_NAME are legacy roles, now they are separated. Legacy roles ar
 * **ARO** - Annualized Rate of Occurrence
 * **Annualized Loss Expectancy** - ALE
 
+(Quantitative Calculation: SLE x ARO = ALE)
+
 ## Risk Management
 
 ### Risk Framework
@@ -149,8 +151,12 @@ Allows grouping control attestation
 Issues can be automatically created from following scenario:
 * Indicator fails
 * Attestation results are not implemented
-* Control Test effectiveness is ineffective and state of test is closed
+* Control Test effectiveness is ineffective and state of test is closed. (Issues are automatically closed when a control test result failure is remediated.)
 * Continuous monitoring results
+
+
+**Risk Lifecycle**
+
 
 **Policy Exception Lifecycle**
 1. New
