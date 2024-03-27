@@ -1,13 +1,19 @@
 # ServiceNow IRM in a nutshell
 I am studying for a certification exam. Here my notes.
 
-## Definitions
+## Common elements
 
 ### Entity
 * **Entity Filter** filters entities from source table, such as Companies from core_company
 * **Entity Type** is to connect risk statements and control objectives to specific types of entities, such as "vendors".
 * **Entity Type** [sn_grc_profile_type] and **Entity** [sn_grc_profile] have many to many relationship between them [sn_grc_m2m_profile_profile_type].
 * **Entity Classes** [sn_grc_profile_class] classify entities. They are used to tag entities, add business context and organisation for reporting.
+
+### Roles
+Roles sn_grc.ROLE_NAME are legacy roles, now they are separated. Legacy roles are contained in new roles. For example both sn_compliance.user and and_risk.user contain sn_grc.user.
+
+
+## Risk Management
 
 ### ARA - Advanced Risk Assessment
 Differs from Classic risk assessment via:
@@ -20,10 +26,53 @@ Risk Framework **is not** relevant when using ARA. Risk values do not rollup to 
 ### RAM - Risk Assessment Methodology
 RAM can be simulated when it is in a draft state and its assessment tyeps are published. When RAM is published, simulations are deleted.
 
-### Compliance Score Calculation
+## Compliance
+
+### Contiunous Monitoring 
+Test plans are specific to controls and can be leveraged during audits. Test templates are available
+
+Indicators monitor controls and risks and collect evidence of performance
+
+Control Attestations validate control implementation
+
+
+### Compliance Score Calculations
+
+**Control Objective Compliance Score**
 Is calculated for Control Objective. Control Objective can be related to citation (from regulation) or to Policy. Formula for the calculation considers all controls per entities that use the control:
 
 Formula: Sum of weight of compliant controls / Sum of weight of all controls * 100
+
+**Profile Score Compliance score**
+If property **sn_compliance.cal_score_by_weighted_control** is true
+
+Formula: Sum of weights of all the compliant standard and common controls associated with the entity / sum of weights of all the controls
+
+If the property is false
+
+Formula: Count of all the compliant standard and common controls associated with the entity / Count of all the controls
+
+**Entity Type Compliance Score Calculation**
+Average of compliance scores of all the entities under it
+
+**Policy compliance score calculation**
+(Average of all immediate policies’ score + Average of all the immediate policy statements’ score) / 2
+
+### Control Types
+
+**Standard Control** have function = Standard Control. There one control is created per entity with name matching control objective.
+
+**Unique Control** have function = Standard Control. There same entity can have additional controls for the control objective, these are unique controls. Control name is different. 
+
+Example: If organization handles multiple products/operational lines, having single control for an entity and control objective might be ineffective.
+
+Unique controls enable high-level controls while allowing more granular controls.
+
+**Common Control** have function = Common Control. Common controls are related to primary entity where the testing occurs. Common control has reliant entities. 
+
+Example: Fire sprinkler system can be a common control for multiple business units.
+
+Function of control affects calculation method. All active, associated common controls contribute to the compliance score.
 
 ### Policy Acknowledgement Campaing
 * Lifecycle
@@ -41,6 +90,10 @@ Can be requested via
 * From issue record
 
 Other applications can register policy exceptions with the **Integration Registry**. Integration Registry is a module in Policy and Compliance > Policy Exceptions > Integration Registry. Integration Registry guides developer how Policy Exceptions can be requested from other application.
+
+### Consolidated attestation
+Allows grouping control attestation
+
 
 **Indicator** 
 
