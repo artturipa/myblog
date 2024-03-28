@@ -64,6 +64,15 @@ Indicators monitor controls and risks and collect evidence of performance
 
 Control Attestations validate control implementation
 
+### Policy types
+
+**Policy** - Internal practice that must be followed
+**Procedure** - Fixed, step-by-step sequence of activities
+**Standard** - Documentation of requirements that can be used to ensure that materials/etc are fit for purpose
+**Plan** - Documented intended future course of action
+**Checklist** - List of items required to be done
+**Framework** - Broad overview or outline of interlinked items
+**Template** - Pattern for an item or a group of items
 
 ### Compliance Score Calculations
 
@@ -154,9 +163,27 @@ Issues can be automatically created from following scenario:
 * Control Test effectiveness is ineffective and state of test is closed. (Issues are automatically closed when a control test result failure is remediated.)
 * Continuous monitoring results
 
+Issue Workflow:
+1. Identification
+2. Triage
+    * Confirmed as a new issue
+    * Confirmed as an existing issue
+    * Confirmed as a risk event
+    * Track as recommendation
+    * Close as non-issue / no action required
+3. Identify Owner
+4. Evaluation
+5. Action Steps
+6. Monitor and review
 
 **Risk Lifecycle**
 
+**Risk Response Lifecycle**
+1. Draft
+2. Work in Progress
+3. Awaiting approval (only if response type = accept)
+4. Review
+5. Closed
 
 **Policy Exception Lifecycle**
 1. New
