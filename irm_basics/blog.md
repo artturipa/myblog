@@ -1,10 +1,6 @@
 # ServiceNow IRM in a nutshell
 I am studying for a certification exam. Here my notes.
 
-Glanced flashcards:
-https://quizlet.com/484558881/servicenow-grc-risk-and-compliance-cis-flash-cards/  (50 in)
-
-
 ## Common elements
 
 ### Main Tables
@@ -20,6 +16,15 @@ https://quizlet.com/484558881/servicenow-grc-risk-and-compliance-cis-flash-cards
     * Control [GRC: Policy and Compliance]
     * Risk [GRC: Risk Management]
 
+### GRC Scoped Applications (according to one source)
+
+* GRC Profiles
+* GRC Workbench
+* Policy And Compliance
+* Risk
+* UCF Compliance
+* GRC Performance Analytics Integrations
+
 ### Entity
 * **Entity Filter** filters entities from source table, such as Companies from core_company
 * **Entity Type** is to connect risk statements and control objectives to specific types of entities, such as "vendors".
@@ -27,6 +32,10 @@ https://quizlet.com/484558881/servicenow-grc-risk-and-compliance-cis-flash-cards
 * **Entity Classes** [sn_grc_profile_class] classify entities. They are used to tag entities, add business context and organisation for reporting.
 
 Entities, Entity classes and Entity types can be created by roles Compliance Manager and Risk Manager
+
+Entities can belong **only to one** Entity classes, but they can me associated with **multiple** entity types.
+
+Entity types can be associated with Control objectives, Policies and risk statements
 
 ## Abbrevations
 
@@ -79,7 +88,7 @@ RAM can be simulated when it is in a draft state and its assessment tyeps are pu
 
 
 
-### Contiunous Monitoring 
+### Continuous Monitoring 
 Test plans are specific to controls and can be leveraged during audits. Test templates are available
 
 Indicators monitor controls and risks and collect evidence of performance
@@ -313,7 +322,7 @@ __When a regulatory feed type of event is marked as applicable, a regulatory cha
 
 Roles sn_grc.ROLE_NAME are legacy roles, now they are separated. Legacy roles are contained in new roles. For example both sn_compliance.user and and_risk.user contain sn_grc.user.
 
-Risk and compliance roles both have levels admin, manager, user, reader. In addition to those, compliance has role **Compliance Developer** [sn_compliance.developer] (contains Compliance Admin). Roles with higher access contain role with lower access.
+Risk and compliance roles both have levels admin, manager, user, reader. In addition to those, compliance has role **Compliance Developer** [sn_compliance.developer] (contains Compliance Admin) (used for article templates in Policy mgmt). Roles with higher access contain role with lower access. 
 
 **GRC business user lite** [sn_grc.business_user_lite] can:
 * Read and update if assigned to them:
@@ -373,13 +382,15 @@ Risk Managers and Risk users [sn_risk.user] can:
     * Risks
 
 Compliance users [sn_compliance.user] can:
-* Send ou tpolicy acknowledgement campaings
+* Send out policy acknowledgement campaings
 * Schedule and follow-up with attestations
 * Respond to indicator task
 * Create, manage and review issues
 * Request evidence for controls, policies and issues
 
-NOTE that Control owner is a role in operational model, but there is no role in the system besides Compliance user [sn_compliance.user]. Control owners are the ones that manage their controls, it is an attribute of a control record. 
+NOTE that Control owner is a role in operational model, but there is no role in the system besides Compliance user [sn_compliance.user]. Control owners are the ones that manage their controls, it is an attribute of a control record.
+
+Compliance roles also contain Attestation Creator [sn_compliance.attestation_creator]. Similar as Risk application also has Risk Assessment Creator [sn_risk.asmt_creator]
 
 ### Regulatory Change Management
 **RCM Admin** [sn_grc_reg_change.admin] can:
@@ -438,6 +449,48 @@ RCM user role is given to individuals that handle responsibilities as Regulatory
 * Most base tables start with **sn_grc_**, and extended tables with **sn_**
 * SOX Content pack can be acquired via Store
 * Citations can have parent citations
+* Risk users can create risks
+* Calculated Risk Factor tells whether mitigating actions are working. Higher calculated risk factor is BAD. If Calculated Risk Factor = 0, Calculated ALE = Residual ALE. If it is 1, Calculated ALE = Inherent ALE.  
+* Risk users/managers can not view Authority documents or citations. Compliance users and managers can.
+* Policies and Authority documents can be created by compliance users, no need to be compliance manager. Compliance manager has very little ACLs in it (seems that mostly connecting controls with content) 
+    * However, in risk, one needs to be risk manager in order to create risk statements. Risk users can create risks.
+* Configuration Compliance application exists
+    * Configuration Compliance application enables you to prioritize and remediate the most critical configuration-related vulnerabilities in your environment quickly and efficiently. Configuration Compliance is available by subscription in the Store. 
+    * "Use test results obtained from third-party Secure Configuration Assessment (SCA) integrations to verify compliance with security or corporate policies. Identify, prioritize, and remediate non-compliant configuration items."
+* GRC: Profiles essential Script Includes: GRCUtilsBase, IssueUtilsBase, GRCAssessmentUtilsBase
+* If risk statement is reactivated, risks go to draft -state
+* Only one entity can exists for an individual record
+* ServiceNow suggests that Policy and Compliance take more time to implement (up to 21 weeks) than Risk (up to 18 weeks)
+* Test templates allow auditors to create quickly multiple test plans
+* Test templates can be created from scratch or from other test templates
+* GRC Cleanup Invalid Entities scheduled job run each night.
+* Creates entities: GRC Profile Generation - Runs every hour
+* Roles can be divided into four types: Admins, Managers, Users and Governance (approver_user)
+* sn_audit.user contains sn_compliance.reader and sn_risk.reader
+* Users downloading UCF info into SN need to have UCF account info. All data from UCF is read only
+* From UCF only authority documents can be selected, citations and control objectives follow
+* Control Objective fields that can be used in auditing and reporting:
+    * Type, Category, Classification
+* Control Objectives tied to policy can't be updated once policy is published
+* Policies in "published" state can be associated with a Profile type (entity type?)
+* Policy KB and KBA can be altered manually, automatically default is generated
+* The compliance/non-compliance of a control will have an impact on the Risk score!
+* Only controls that relate to same entity can be linked to risk
+* Risks can be automatically linked to controls if control objectives are attached to risk statements
+* Default scores that can be set onto risk statement: __Inherent and Residual SLE + ARO These 4 values are then inherited by the Risks linked to the RS.__
+* Risk criteria is used to translate between qualitative and quantitative criteria.
+* Quantitave = SLE & ARO; Qualitative = Impact & Likelihood. Quantitative method is used by default.
+* Score calculation can be changed from properties under risk -application.
+* 3 types of risk criteria: Impact, Likelihood, Score
+* Calculated Risk Factor = CRF = (IFF + CFF) / 2
+    * IFF - Indicator Failure Factor - Formula: (Sum of FAILED Indicators / Sum of ALL Indicators) * 100
+    * CFF - Control Failure Factor - Formula: (Sum of Weighted FAILED Controls / Sum of ALL Weighted Controls) * 100
+* Related list on policy statement allows creating Configuration Tests and PA Indicators (PA Indicators from risk statements as well)
+* Response Task lifecycles are not similar. Acceptance task has different lifecycle (it has Awaiting Approval -state in addition to other states)
+
+145 / 344 terms https://quizlet.com/474063816/learn
+ 
+
 
 ## Tables
 Essential Classes in the Data Model
@@ -544,5 +597,3 @@ Generic tasks which are completed throughout an engagement.
 *sn_audit_test_plan*
 
 Used to describe how a feature is to be tested. References a control.
-
-
