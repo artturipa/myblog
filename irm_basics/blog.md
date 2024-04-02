@@ -7,6 +7,19 @@ https://quizlet.com/484558881/servicenow-grc-risk-and-compliance-cis-flash-cards
 
 ## Common elements
 
+### Main Tables
+* Document [sn_grc_document] [GRC: Profiles] is extended by:
+    * Authority Document [GRC: Policy & Compliance]
+    * Policy [GRC: Policy & Compliance]
+    * Risk Framework [GRC: Risk Management]
+* Content [sn_grc_content] [GRC: Profiles] is extended by:
+    * Control Objective [GRC: Policy and Compliance]
+    * Citation [GRC: Policy and Compliance]
+    * Risk Statement [GRC: Risk Management]
+* Item [sn_grc_item] [GRC: Profiles] is extended by:
+    * Control [GRC: Policy and Compliance]
+    * Risk [GRC: Risk Management]
+
 ### Entity
 * **Entity Filter** filters entities from source table, such as Companies from core_company
 * **Entity Type** is to connect risk statements and control objectives to specific types of entities, such as "vendors".
@@ -109,7 +122,7 @@ Formula: Count of all the compliant standard and common controls associated with
 **Entity Type Compliance Score Calculation**
 Average of compliance scores of all the entities under it
 
-**Policy compliance score calculation**
+**Policy compliance score calculation** 
 (Average of all immediate policies’ score + Average of all the immediate policy statements’ score) / 2
 
 ### Content provider store
@@ -330,6 +343,9 @@ Risk and compliance roles both have levels admin, manager, user, reader. In addi
     * Create risks and risk assessments
     * Relate controls to a risk
 
+Note that workspace roles **contain** other roles. So:
+**Corporate compliance manager** [sn_compliance_ws.corporate_compliance_manager] contains Compliance Manager
+
 
 ### Compliance and Risk
 
@@ -424,26 +440,7 @@ RCM user role is given to individuals that handle responsibilities as Regulatory
 * Citations can have parent citations
 
 ## Tables
-
-### Main Tables
-* Document [sn_grc_document] [GRC: Profiles] is extended by:
-    * Authority Document [GRC: Policy & Compliance]
-    * Policy [GRC: Policy & Compliance]
-    * Risk Framework [GRC: Risk Management]
-* Content [sn_grc_content] [GRC: Profiles] is extended by:
-    * Control Objective [GRC: Policy and Compliance]
-    * Citation [GRC: Policy and Compliance]
-    * Risk Statement [GRC: Risk Management]
-* Item [sn_grc_item] [GRC: Profiles] is extended by:
-    * Control [GRC: Policy and Compliance]
-    * Risk [GRC: Risk Management]
-
-
-## 
-
-
-
-## Essential Classes in the Data Model
+Essential Classes in the Data Model
 
 #### Entity
 *sn_grc_profile*
