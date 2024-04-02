@@ -110,7 +110,7 @@ Is calculated for Control Objective. Control Objective can be related to citatio
 
 Formula: Sum of weight of compliant controls / Sum of weight of all controls * 100
 
-**Profile Score Compliance score**
+**Profile Score Compliance score**  
 If property **sn_compliance.cal_score_by_weighted_control** is true
 
 Formula: Sum of weights of all the compliant standard and common controls associated with the entity / sum of weights of all the controls
@@ -119,10 +119,10 @@ If the property is false
 
 Formula: Count of all the compliant standard and common controls associated with the entity / Count of all the controls
 
-**Entity Type Compliance Score Calculation**
+**Entity Type Compliance Score Calculation**  
 Average of compliance scores of all the entities under it
 
-**Policy compliance score calculation** 
+**Policy compliance score calculation**  
 (Average of all immediate policies’ score + Average of all the immediate policy statements’ score) / 2
 
 ### Content provider store
