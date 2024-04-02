@@ -15,11 +15,6 @@ https://quizlet.com/484558881/servicenow-grc-risk-and-compliance-cis-flash-cards
 
 Entities, Entity classes and Entity types can be created by roles Compliance Manager and Risk Manager
 
-
-
-### Roles
-Roles sn_grc.ROLE_NAME are legacy roles, now they are separated. Legacy roles are contained in new roles. For example both sn_compliance.user and and_risk.user contain sn_grc.user.
-
 ## Abbrevations
 
 * **SLE** - Single Loss Expectancy
@@ -35,6 +30,18 @@ is a formalized process for managing risk. Risk frameworks are used by **risk ma
 
 ### Risk Criteria
 is a quantitative or qualitative value against which level of risk is. Risk criteria is required for the risk heatmap.
+
+Risk Assessment questions are known as **factors**:
+* Manual factors require human responses
+* Automated factors fetch data from ServiceNow
+* Group factors can be manual or automated, they are grouped to create a combinated score
+* Factor contribution type can be qualitative, quantitave or both
+
+After risk assessment is completed, comes the response. There are four types of response:
+* Acceptance
+* Avoidance
+* Mitigation
+* Transfer (Shifting the responsibility or impact of a risk to a third party, for example insurance company)
 
 ### ARA - Advanced Risk Assessment
 Differs from Classic risk assessment via:
@@ -57,6 +64,8 @@ RAM can be simulated when it is in a draft state and its assessment tyeps are pu
 5. Every month, owners deploy their method to enforce the control, results are captured with **indicator** (__Check that license has been confirmed within a month__)
 6. Every year, **auditor** confirms that the enforcement of the control works as intended through **Control test**
 
+
+
 ### Contiunous Monitoring 
 Test plans are specific to controls and can be leveraged during audits. Test templates are available
 
@@ -75,6 +84,13 @@ Control Attestations validate control implementation
 **Template** - Pattern for an item or a group of items
 
 ### Compliance Score Calculations
+
+**Default hilighting of Control compliance**
+* 80+ in green
+* 80-50 in yellow
+* below 50 in red
+
+__Compliance scoring is the percentage of controls that are compliant for a specific control objective.__
 
 **Control Objective Compliance Score**
 Is calculated for Control Objective. Control Objective can be related to citation (from regulation) or to Policy. Formula for the calculation considers all controls per entities that use the control:
@@ -95,6 +111,26 @@ Average of compliance scores of all the entities under it
 
 **Policy compliance score calculation**
 (Average of all immediate policies’ score + Average of all the immediate policy statements’ score) / 2
+
+### Content provider store
+
+**Some Content providers**
+* COSO (Committee of Sponsoring Organizations of the Treadway Commission)
+* Edgile Automated Regulatory Compliance (ArC)
+* FedRamp (Federal Risk and Authorization Management Program)
+* HITRUST
+* LexisNexis Risk Solutions
+* Thomson Reuters
+* UCF (United Compliance Framework)
+* Wolters Kluwer
+
+Content provider store app consists of:
+* Authority documents
+* Citations
+* Control Objectives from UCF controls
+* Relationships between authority documents and citations
+* Relationships between citations and control objectives
+* Relationships between overlapping authority documents, citations, and control objectives
 
 ### Control Types
 
@@ -132,7 +168,30 @@ Other applications can register policy exceptions with the **Integration Registr
 ### Consolidated attestation
 Allows grouping control attestation
 
-**Indicator** 
+### Indicator 
+Indicators are used to measure if a control is effective or not. They are the manual or automated steps that measure effectiveness of the process identified in control attestation.
+
+Indicators can be created using indicator templates which can automatically generate indicators for multiple controls that reference the same control objective.
+
+* Control attestations answer the question, “Has the control been implemented?”
+* Indicators answer the question, “Is the control effective?”
+* Control tests answer the question, “Is the control effective from a design and operation standpoint?”
+
+## Audit
+
+**Audit Plan** helps managing different types of audits in a periodic manner. Audit engagement is an audit project.
+
+**Engagements hold following types of tasks**
+* Control tests
+* Interviews
+* Walkthroughs
+* Activities (=generic tasks)
+
+Audit engagements are scoped with auditable units or entities. Scoping automatically asssociates engagement with:
+* All risks related to the entity
+* All controls related to the entity
+* All test plans related to the controls
+* All indicator results related to the controls
 
 ## Lifecycles
 
@@ -177,6 +236,11 @@ Issue Workflow:
 6. Monitor and review
 
 **Risk Lifecycle**
+1. Draft
+2. Assess
+3. Respond
+4. Monitor
+5. Retired
 
 **Risk Response Lifecycle**
 1. Draft
@@ -200,14 +264,81 @@ Policy Exceptions can be created from:
 * Policy Statement
 * Policy
 
+**Regulatory feed lifecycle**
+1. New
+2. Impact assessment
+3. In progress
+4. Deferred
+5. Cancelled
+6. Closed
+
+__When a regulatory feed type of event is marked as applicable, a regulatory change task is automatically created. For a source document type of feed, a source document import task is automatically created.__
+
+**Regulatory change task lifecycle**
+1. New
+2. Respond
+3. Awaiting approval
+4. Implementation
+5. Closed
+
+**Source document import task lifecycle**
+1. Ready to import
+2. In progress
+3. Awaiting approval
+4. Implementation (optional)
+5. Closed 
+
+**Audit Engagement Lifecycle**
+1. Scope
+2. Validate & Plan
+3. Fieldwork
+4. Awaiting approval
+5. Follow-up
+6. Closed
+
 ## Roles
 
-Compliance Manager and Risk Manager can create:
+Roles sn_grc.ROLE_NAME are legacy roles, now they are separated. Legacy roles are contained in new roles. For example both sn_compliance.user and and_risk.user contain sn_grc.user.
+
+Risk and compliance roles both have levels admin, manager, user, reader. In addition to those, compliance has role **Compliance Developer** [sn_compliance.developer] (contains Compliance Admin). Roles with higher access contain role with lower access.
+
+**GRC business user lite** [sn_grc.business_user_lite] can:
+* Read and update if assigned to them:
+    * Policy acknowledgements
+    * Control attestations
+    * Issues assigned and issue remediation tasks
+    * Evidence requests
+    * Risk response tasks
+    * Manual indicator tasks
+* Review and approve AR assessment
+* Create, read or update Policy Exceptions
+
+**GRC business user** [sn_grc.business_user] can do all the same, and in addition they can:
+* Contribute to policies
+* Group attestations
+* Request and approve policy exceptions
+* Accept work and approve evidence responses
+* Assign risk tasks
+* Take risk assessments
+
+**Compliance/Risk user** can do all the same, and in addition:
+* Compliance user:
+    * Create policies, control objectives, controls and policy acknowledgement campaings
+    * Request evidence
+    * Group Issues
+* Risk user:
+    * Create risks and risk assessments
+    * Relate controls to a risk
+
+
+### Compliance and Risk
+
+Compliance Manager [sn_compliance.manager]  and Risk Manager [sn_risk.manager] can create:
 * Entities, Entity classes and Entity types
 * Issues, Indicators, Remediation Tasks and Policy Exceptions
 
 Compliance Managers can create:
-* Policies 
+* Policies (Compliance users can do this as well)
 * Control Objectives (sometimes referred as Policy Statements)
 * Policy Exceptions
 * Controls
@@ -216,20 +347,83 @@ Compliance Managers can create:
 
 Risk Managers can create:
 * Risks
-* RIsk Frameworks
+* Risk Frameworks
 * Risk Statements
 
-Risk Managers and Risk users can:
+Risk Managers and Risk users [sn_risk.user] can:
 * View
     * Risk Frameworks, Risk statements, Assessments, and Risk Response Tasks
 * Create
     * Risks
 
-## Tables
+Compliance users [sn_compliance.user] can:
+* Send ou tpolicy acknowledgement campaings
+* Schedule and follow-up with attestations
+* Respond to indicator task
+* Create, manage and review issues
+* Request evidence for controls, policies and issues
 
-### Tips and specifics
+NOTE that Control owner is a role in operational model, but there is no role in the system besides Compliance user [sn_compliance.user]. Control owners are the ones that manage their controls, it is an attribute of a control record. 
+
+### Regulatory Change Management
+**RCM Admin** [sn_grc_reg_change.admin] can:
+* Set up the RCM application
+* Coordinate and facilitate configuration requests
+* Maintain taxonomy values
+
+**RCM IT Admin** [sn_grc_reg_change.it_admin] may often be same individual as the admin. The role can:
+* Set up the regulatory intelligence providers in the ServiceNow RCM application
+
+**RCM Manager** [sn_grc_reg_change.manager] can:
+* Monitor the progress of regulatory change initiatives within the organization
+* View all the regulatory content updates relevant to the organization
+* Assign new regulatory feeds that are sourced from external sources
+* Assign regulatory tasks within the teams reponsible for managing regulatory change
+
+RCM manager assigns the regulatory change task to RCM User. RCM user has only read access to the task until it is assigned.
+
+**RCM User** [sn_grc_reg_change.user] can:
+* Assess the applicability of regulatory feeds to the organization
+* Initiate impact assessments and assign them to subject matter experts (SMEs) or owners of the organization
+* Complete assigned regulatory tasks
+* Create actions tasks for the risk and compliance users to complete
+
+RCM user role is given to individuals that handle responsibilities as Regulatory Change Coordinators.
+
+### Audit 
+
+**Audit Admin** [sn_audit.admin] can:
+* Set up the Audit Management application
+* Coordinate and facilitate coniguration requests
+* Delte engagements, audit tasks, test templates and test plans
+
+**Audit Manager** [sn_audit.manager] can:
+* Create audit plans and engagements, including records necessary to conduct the audit, such as milestones, tasks and evidence requests
+* Approve audit tasks, workpapers and engagements
+* Track and monitor audit findings
+
+**Audit User** [sn_audit.user] can:
+* Perform fieldwork (walkthroughs, interviews, control testing, etc.)
+* Document the work and findings
+* Resolve and/or follow up with audit findings
+* Create test templates and test plans
+* Read Policy and Compliance and Risk Management Applications
+
+**Engagement project manager** [sn_audit_advanced.engagement_project_manager] can:
+* Complete advanced planning with audit plans and engagements
+* Create resource and costs plans and approve time cards
+
+**External auditor** [sn_audit.external_auditor]
+* Perform audit against specific regulation
+* View closed engagements and tasks
+* View published policies, controls and risks in the Monitor state
+
+## Tips and specifics
 * Most base tables start with **sn_grc_**, and extended tables with **sn_**
 * SOX Content pack can be acquired via Store
+* Citations can have parent citations
+
+## Tables
 
 ### Main Tables
 * Document [sn_grc_document] [GRC: Profiles] is extended by:
