@@ -114,8 +114,7 @@ Control Attestations validate control implementation
 
 __Compliance scoring is the percentage of controls that are compliant for a specific control objective.__
 
-**Control Objective Compliance Score**
-Is calculated for Control Objective. Control Objective can be related to citation (from regulation) or to Policy. Formula for the calculation considers all controls per entities that use the control:
+**Control Objective Compliance Score** is calculated for Control Objective. Control Objective can be related to citation (from regulation) or to Policy. Formula for the calculation considers all controls per entities that use the control:
 
 Formula: Sum of weight of compliant controls / Sum of weight of all controls * 100
 
@@ -452,7 +451,7 @@ RCM user role is given to individuals that handle responsibilities as Regulatory
 * Risk users can create risks
 * Calculated Risk Factor tells whether mitigating actions are working. Higher calculated risk factor is BAD. If Calculated Risk Factor = 0, Calculated ALE = Residual ALE. If it is 1, Calculated ALE = Inherent ALE.  
 * Risk users/managers can not view Authority documents or citations. Compliance users and managers can.
-* Policies and Authority documents can be created by compliance users, no need to be compliance manager. Compliance manager has very little ACLs in it (seems that mostly connecting controls with content) 
+* Policies and Authority documents can be created by compliance users, no need to be compliance manager. Compliance manager role is required to retire a policy. 
     * However, in risk, one needs to be risk manager in order to create risk statements. Risk users can create risks.
 * Configuration Compliance application exists
     * Configuration Compliance application enables you to prioritize and remediate the most critical configuration-related vulnerabilities in your environment quickly and efficiently. Configuration Compliance is available by subscription in the Store. 
@@ -487,9 +486,19 @@ RCM user role is given to individuals that handle responsibilities as Regulatory
     * CFF - Control Failure Factor - Formula: (Sum of Weighted FAILED Controls / Sum of ALL Weighted Controls) * 100
 * Related list on policy statement allows creating Configuration Tests and PA Indicators (PA Indicators from risk statements as well)
 * Response Task lifecycles are not similar. Acceptance task has different lifecycle (it has Awaiting Approval -state in addition to other states)
+* If an issue is Remediated, control becomes compliant. If an issue is accepted, control stays non-compliant
+* Policy exceptions can be created for Policies, Control Objectives and Issues (Creating a policy exception apparently does not require a role)
+* Policy exceptions can't be approved, if they are requested agains policies or VRM (Vendor Risk Management) issues, or if control objective has no controls (or all controls are draft or retired)
+* If risk management is installed and policy exception has associated risks, policy exception lifecycle has "Risk Assessment" -state
+* Role risk.manager can review risks associated with policy exception
+* Activity is only audit task type that can be child of other audit tasks (Rest audit task types are direct children of engagement)
+* Manager -level role is required to create issues or indicators. User -level roles can work with them.
+* Strategic scoping can rely to one entity instead of 10's of thousands (for example in terms of multiple low level systems). Operational scoping is to create an entity per system (for example if 20 - 30 systems). 
+* Entity types can have multiple entity filters linked to it
+* Any of the listed reviewers OR Policy owner can move control into awaiting approval state
+* Only Compliance Managers can retire a control or move them into monitor state
+* Only one risk response task per risk
 
-145 / 344 terms https://quizlet.com/474063816/learn
- 
 
 
 ## Tables
