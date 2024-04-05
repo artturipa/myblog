@@ -1,5 +1,5 @@
-# ServiceNow IRM in a nutshell
-I am studying for a certification exam. Here my notes.
+# ServiceNow IRM CIS summary
+I did a certification exam. Here are my notes.
 
 ## Common elements
 
@@ -29,7 +29,7 @@ I am studying for a certification exam. Here my notes.
 * **Entity Filter** filters entities from source table, such as Companies from core_company
 * **Entity Type** is to connect risk statements and control objectives to specific types of entities, such as "vendors".
 * **Entity Type** [sn_grc_profile_type] and **Entity** [sn_grc_profile] have many to many relationship between them [sn_grc_m2m_profile_profile_type]. One entity can have **multiple** Entity types
-* **Entity Classes** [sn_grc_profile_class] classify entities. They are used to tag entities, add business context and organisation for reporting.
+* **Entity Classes** [sn_grc_profile_class] classify entities. They are used to tag entities, add business context and organization for reporting.
 
 Entities, Entity classes and Entity types can be created by roles Compliance Manager and Risk Manager
 
@@ -56,7 +56,7 @@ is a quantitative or qualitative value against which level of risk is. Risk crit
 Risk Assessment questions are known as **factors**:
 * Manual factors require human responses
 * Automated factors fetch data from ServiceNow
-* Group factors can be manual or automated, they are grouped to create a combinated score
+* Group factors can be manual or automated, they are grouped to create a combined score
 * Factor contribution type can be qualitative, quantitave or both
 
 After risk assessment is completed, comes the response. There are four types of response:
@@ -67,21 +67,21 @@ After risk assessment is completed, comes the response. There are four types of 
 
 ### ARA - Advanced Risk Assessment
 Differs from Classic risk assessment via:
-* Statement hierarchy: ARA has mulstiple levels
-* Risk Rollup: Classic risk has none
+* Statement hierarchy: ARA has multiple levels
+* Risk Rollup: Classic risk assessment does not include risk rollup
 * Assessment: In ARA scoped risks and objects can be assessed, question types are more various and multiple risk scoring systems are available. 
 
 Risk Framework **is not** relevant when using ARA. Risk values do not rollup to the framework.
 
 ### RAM - Risk Assessment Methodology
-RAM can be simulated when it is in a draft state and its assessment tyeps are published. When RAM is published, simulations are deleted.
+RAM can be simulated when it is in a draft state and its assessment types are published. When RAM is published, simulations are deleted.
 
 ## Compliance
 
 ### Operational Perspective (example)
 1. Policy states that something should be done (__Every employee needs to renew their license annually__)
 2. Control is established to ensure compliance with the policy (__Ensure that all employees licenses are up to date__)
-3. (Entity) Owners are responsible for enforcing the control in their departemnt
+3. (Entity) Owners are responsible for enforcing the control in their department
 4. Owner declares that they have enforced the contol via **attestation**. Attestation can be a simple form that asks whether the control is in place.
 5. Every month, owners deploy their method to enforce the control, results are captured with **indicator** (__Check that license has been confirmed within a month__)
 6. Every year, **auditor** confirms that the enforcement of the control works as intended through **Control test**
@@ -89,7 +89,7 @@ RAM can be simulated when it is in a draft state and its assessment tyeps are pu
 
 
 ### Continuous Monitoring 
-Test plans are specific to controls and can be leveraged during audits. Test templates are available
+Test plans are specific to controls and can be leveraged during audits. Test templates are available for use.
 
 Indicators monitor controls and risks and collect evidence of performance
 
@@ -98,11 +98,11 @@ Control Attestations validate control implementation
 ### Policy types
 
 **Policy** - Internal practice that must be followed
-**Procedure** - Fixed, step-by-step sequence of activities
+**Procedure** - A fixed, step-by-step sequence of activities
 **Standard** - Documentation of requirements that can be used to ensure that materials/etc are fit for purpose
 **Plan** - Documented intended future course of action
 **Checklist** - List of items required to be done
-**Framework** - Broad overview or outline of interlinked items
+**Framework** - A broad overview or outline of interlinked items
 **Template** - Pattern for an item or a group of items
 
 ### Compliance Score Calculations
@@ -119,18 +119,18 @@ __Compliance scoring is the percentage of controls that are compliant for a spec
 Formula: Sum of weight of compliant controls / Sum of weight of all controls * 100
 
 **Profile Score Compliance score**  
-If property **sn_compliance.cal_score_by_weighted_control** is true
+If property **sn_compliance.cal_score_by_weighted_control** is true:
 
 Formula: Sum of weights of all the compliant standard and common controls associated with the entity / sum of weights of all the controls
 
-If the property is false
+If the property is false:
 
 Formula: Count of all the compliant standard and common controls associated with the entity / Count of all the controls
 
 **Entity Type Compliance Score Calculation**  
 Average of compliance scores of all the entities under it
 
-**Policy compliance score calculation**  
+**Policy Compliance Score Calculation**  
 (Average of all immediate policies’ score + Average of all the immediate policy statements’ score) / 2
 
 ### Content provider store
@@ -155,9 +155,9 @@ Content provider store app consists of:
 
 ### Control Types
 
-**Standard Control** have function = Standard Control. There one control is created per entity with name matching control objective.
+**Standard Control** have function = Standard Control. One control is created per entity with name matching control objective.
 
-**Unique Control** have function = Standard Control. There same entity can have additional controls for the control objective, these are unique controls. Control name is different. 
+**Unique Control** have function = Standard Control. There same entity can have additional controls for the control objective; these are unique controls. Control name is different. 
 
 Example: If organization handles multiple products/operational lines, having single control for an entity and control objective might be ineffective.
 
@@ -165,16 +165,16 @@ Unique controls enable high-level controls while allowing more granular controls
 
 **Common Control** have function = Common Control. Common controls are related to primary entity where the testing occurs. Common control has reliant entities. 
 
-Example: Fire sprinkler system can be a common control for multiple business units.
+Example: The Fire sprinkler system can be a common control for multiple business units.
 
 Function of control affects calculation method. All active, associated common controls contribute to the compliance score.
 
 ### Policy Acknowledgement Campaing
-* Lifecycle
+* Lifecycle stages
     * New
-    * Pending acknowledgement
+    * Pending acknowledgment
     * Closed
-    * cancalled
+    * cancelled
 
 ### Policy Exception
 Can be requested via 
@@ -184,7 +184,7 @@ Can be requested via
 * From control objective record
 * From issue record
 
-Other applications can register policy exceptions with the **Integration Registry**. Integration Registry is a module in Policy and Compliance > Policy Exceptions > Integration Registry. Integration Registry guides developer how Policy Exceptions can be requested from other application.
+Other applications can register Policy Exceptions with the **Integration Registry**. Integration Registry is a module in Policy and Compliance > Policy Exceptions > Integration Registry. Integration Registry guides developer how Policy Exceptions can be requested from other application.
 
 ### Consolidated attestation
 Allows grouping control attestation
@@ -337,7 +337,7 @@ Risk and compliance roles both have levels admin, manager, user, reader. In addi
 **GRC business user** [sn_grc.business_user] can do all the same, and in addition they can:
 * Contribute to policies
 * Group attestations
-* Request and approve policy exceptions
+* Request and approve Policy Exceptions
 * Accept work and approve evidence responses
 * Assign risk tasks
 * Take risk assessments
@@ -351,7 +351,7 @@ Risk and compliance roles both have levels admin, manager, user, reader. In addi
     * Create risks and risk assessments
     * Relate controls to a risk
 
-Note that workspace roles **contain** other roles. So:
+Note that Workspace roles **contain** other roles. So:
 **Corporate compliance manager** [sn_compliance_ws.corporate_compliance_manager] contains Compliance Manager
 
 
@@ -464,14 +464,14 @@ RCM user role is given to individuals that handle responsibilities as Regulatory
 * Test templates can be created from scratch or from other test templates
 * GRC Cleanup Invalid Entities scheduled job run each night.
 * Creates entities: GRC Profile Generation - Runs every hour
-* Roles can be divided into four types: Admins, Managers, Users and Governance (approver_user)
+* Roles can be divided into four types: Admins, Managers, Users, and Governance (approver_user)
 * sn_audit.user contains sn_compliance.reader and sn_risk.reader
 * Users downloading UCF info into SN need to have UCF account info. All data from UCF is read only
 * From UCF only authority documents can be selected, citations and control objectives follow
 * Control Objective fields that can be used in auditing and reporting:
     * Type, Category, Classification
 * Control Objectives tied to policy can't be updated once policy is published
-* Policies in "published" state can be associated with a Profile type (entity type?)
+* Policies in "published" state can be associated with a Profile type (entity type)
 * Policy KB and KBA can be altered manually, automatically default is generated
 * The compliance/non-compliance of a control will have an impact on the Risk score!
 * Only controls that relate to same entity can be linked to risk
@@ -497,8 +497,7 @@ RCM user role is given to individuals that handle responsibilities as Regulatory
 * Entity types can have multiple entity filters linked to it
 * Any of the listed reviewers OR Policy owner can move control into awaiting approval state
 * Only Compliance Managers can retire a control or move them into monitor state
-* Only one risk response task per risk
-
+* Only one risk response task per risk. When task changes to review state, risk is also changed to review
 
 
 ## Tables
@@ -522,7 +521,7 @@ Classify entities, type is used in scoping (risk statements and control objectiv
 #### Issue
 *sn_grc_issue*
 
-Generic issue, for example an operational risk event, compliance violation, security breach etc. ServiceNow does not provide detailed issue workflow, so customers are free to implement structure that fits them.
+Generic issue, for example, an operational risk event, compliance violation, security breach etc. ServiceNow does not provide detailed issue workflow, so customers are free to implement structure that fits them.
 
 ### Risk
 
@@ -595,7 +594,7 @@ Used to plan audits and engagements, scope the audits correctly and ensure that 
 #### Engagements
 *sn_audit_engagement*
 
-a project like structure, which is used to conduct an audit.
+a project-like structure, which is used to conduct an audit.
 
 #### Audit tasks
 *sn_audit_task*
