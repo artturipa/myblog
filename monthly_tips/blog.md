@@ -2,7 +2,14 @@
 Delete record from table **sys_hub_action_type_definition**
 
 ### Do stuff asynchronously via synchronous script
-Use the **ScheduleOnce** API. Useful also if you wan't to ensure that updates are done as system user.
+Use the **ScheduleOnce** API. Useful also if you wan't to ensure that updates are done as system user. Or if for any other reason you need to delay running an async script:
+
+    var util = new yourScriptInclude();
+    var scheduler = new ScheduleOnce();
+    // Below script is basically: (function)(arguments)
+    scheduler.script = '('+util.functionName+')("'+variable_to_pass_as_first_parameter+'","'+ variable_to_pass_as_second_parameter+'");';
+	sched.setAsSeconds(30); // delay in seconds
+	sched.schedule(); // pushes the script execution to sys_trigger
 
 ### Activate new UI (Next Experience) in San Diego -release
 Set system property **glide.ui.polaris.experience** to true.
