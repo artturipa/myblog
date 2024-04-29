@@ -163,3 +163,17 @@ Add below class and css to containing div. Note that in case the items are separ
     }
 
 
+## Listen for all events
+
+Sometimes you might want to check what events are available. Put this in your client script to do that. Prepare for extensive amount of logging:
+
+    Object.keys(window).forEach(key => { 
+    if (/^on/.test(key)) { 
+        events.push(key.slice(2)); 
+        window.addEventListener(key.slice(2), () => { 
+        console.log(key.slice(2) + ` event occurred`); 
+        }); 
+    } 
+    }); 
+    
+
