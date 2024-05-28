@@ -195,3 +195,7 @@ Sometimes you might want to check what events are available. Put this in your cl
     }); 
     
 
+## Redirect in Client Script:
+
+    var host = 'https://' + $window.location.host;
+    $window.location.href = hosturl + "/portal?id=page"; 
