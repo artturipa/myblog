@@ -30,6 +30,24 @@ Note, this is well documented by ServiceNow, for more examples check the [refere
             })
 	}
 
+**Additional styling**
+
+You can't style the buttons without customization. Adding this CSS to your widget is a good way to do the styling:
+
+    // applies to both buttons
+    .btn {
+        // Styles that apply for both buttons
+    }
+    
+    .btn-default {
+        // Style that applies to Cancel button
+    }
+
+    .btn-primary {
+        // Style that applies to Primary button
+    }
+
+
 ## Client -> Server -> Client
 
 1. Initialize object in client side to pass in relevant parameters to server.
