@@ -11,6 +11,10 @@ So:
 2. Use **Workspace App Shell**, as it has same top level navigation that is visible elsewhere in the platform
 3. Create new page from scratch. Recommended name: **home**
 
+## Ensure end users have access to the page
+
+It seems that ServiceNow is now able to create the ACLs automatically, so it should be sufficient to grant users **canvas_user** role. Nevertheless, you can check that there exists an ACL with type: **ux_route** and name **COMPANY_PREFIX.EXPERIENCE.\***
+
 ## Stylize the page
 
 If you like, you can start by adding a background image for the langing page:
@@ -62,6 +66,8 @@ Landing page is controlled by user preference (__sys_user_preference__) **my_hom
 
 Format for the value shoule be /x/PREFIX/APP/PAGENAME
 
-## Set the page as default
-
  ![Graph](https://raw.githubusercontent.com/artturipa/myblog/main/rest_cache/cahcegraph.png)
+
+ ## Debugging tips
+
+ As of writing this, ServiceNow had still some bugs after all. My events were triggering multiple times when that should not be the case. In order to track down the events and remove them, do recognize that the contents are both in *sys_ux_macroponent* and *sys_ux_screen*. If event triggers multiple times, ensure that only one instance of it exists in **sys_ux_screen**.
