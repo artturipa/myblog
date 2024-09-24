@@ -66,8 +66,6 @@ Landing page is controlled by user preference (__sys_user_preference__) **my_hom
 
 Format for the value shoule be /x/PREFIX/APP/PAGENAME
 
- ![Graph](https://raw.githubusercontent.com/artturipa/myblog/main/rest_cache/cahcegraph.png)
-
- ## Debugging tips
+## Debugging tips
 
  As of writing this, ServiceNow had still some bugs after all. My events were triggering multiple times when that should not be the case. In order to track down the events and remove them, do recognize that the contents are both in *sys_ux_macroponent* and *sys_ux_screen*. If event triggers multiple times, ensure that only one instance of it exists in **sys_ux_screen**.
